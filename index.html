@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How Iraqis view al-Zaidi’s government, 100 days in — IIACSS webinar in partnership with the Atlantic Council." />
+  <title>How Iraqis view al-Zaidi’s government, 100 days in</title>
+
+  <style>
+    :root {
+      --navy: #071b33;
+      --navy-2: #0b2747;
+      --text: #162235;
+      --muted: #637084;
+      --line: #e5e9ef;
+      --accent: #f2b620;
+      --white: #ffffff;
+      --page: #f7f9fc;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero {
+      width: 100%;
+      height: min(70vh, 640px);
+      min-height: 280px;
+      overflow: hidden;
+      background: #dfe5ec;
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .logo-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo-strip__inner {
+      width: min(calc(100% - 40px), var(--max-width));
+      min-height: 118px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 22px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      max-width: 44%;
+    }
+
+    .logo img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 72px;
+      object-fit: contain;
+    }
+
+    .logo--left {
+      justify-content: flex-start;
+    }
+
+    .logo--right {
+      justify-content: flex-end;
+    }
+
+    .webinar-logo {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 9px;
+      color: var(--navy);
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .webinar-logo__name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2.3vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    .webinar-logo__days {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.55rem, 2.8vw, 2.55rem);
+      font-weight: 700;
+      color: #e6a72f;
+    }
+
+    .atlantic-logo {
+      max-height: 64px !important;
+      width: min(340px, 100%) !important;
+      object-fit: contain !important;
+    }
+
+    main {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+      padding: 72px 0 96px;
+    }
+
+    .content-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: clamp(30px, 5vw, 64px);
+      box-shadow: 0 18px 55px rgba(17, 35, 59, 0.07);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--navy-2);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin: 0 0 28px;
+      max-width: 950px;
+      color: var(--navy);
+      font-size: clamp(2rem, 4.5vw, 4.25rem);
+      line-height: 1.06;
+      letter-spacing: -0.045em;
+      font-weight: 800;
+    }
+
+    .intro {
+      max-width: 940px;
+      margin: 0;
+      color: #344258;
+      font-size: clamp(1rem, 1.35vw, 1.15rem);
+    }
+
+    .intro + .intro {
+      margin-top: 22px;
+    }
+
+    .event-time {
+      margin: 38px 0 0;
+      padding: 24px 28px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 14px 14px 0;
+      background: #fbf7e9;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .register {
+      margin-top: 38px;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .register-label {
+      margin: 0 0 16px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .register-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 24px rgba(7, 27, 51, 0.16);
+    }
+
+    .register-button:hover {
+      transform: translateY(-2px);
+      background: var(--navy-2);
+      box-shadow: 0 14px 28px rgba(7, 27, 51, 0.22);
+    }
+
+    .register-url {
+      display: block;
+      max-width: 900px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 700px) {
+      .logo-strip__inner {
+        min-height: 96px;
+        gap: 20px;
+      }
+
+      .logo {
+        max-width: 46%;
+      }
+
+      .logo img {
+        max-height: 52px;
+      }
+
+      main {
+        padding: 42px 0 64px;
+      }
+
+      .content-card {
+        border-radius: 18px;
+      }
+
+      .event-time {
+        padding: 20px;
+      }
+
+      .register-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <section class="hero" aria-label="Webinar cover image">
+      <img src="https://raw.githubusercontent.com/saif0133/How-Iraqis-view-al-Zaidi-s-government-100-days-in/main/alzaidi%20100%20day.png" alt="How Iraqis view al-Zaidi’s government, 100 days in" />
+    </section>
+
+    <section class="logo-strip" aria-label="Event partners">
+      <div class="logo-strip__inner">
+        <div class="logo logo--left">
+          <div class="webinar-logo" aria-label="Al-Zaidi’s 100 Days webinar">
+            <span class="webinar-logo__name">Al-Zaidi’s</span>
+            <span class="webinar-logo__days">100 Days</span>
+          </div>
+        </div>
+
+        <div class="logo logo--right">
+          <img
+            class="atlantic-logo"
+            src="https://bm.ge/uploads/files/2026/04/14/309545/atlantic-council_w_h.jpeg"
+            alt="Atlantic Council"
+          />
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <article class="content-card">
+      <div class="eyebrow">IIACSS Webinar</div>
+
+      <h1>How Iraqis view al-Zaidi’s government, 100 days in</h1>
+
+      <p class="intro">
+        IIACSS’s 100 Days Survey examines how Iraqis assess the al-Zaidi government during its first months in office.
+        Based on a nationally representative survey of 2,056 Iraqis, the findings show strong early optimism, with
+        77% expressing a positive view of the government. Yet concerns over corruption, unemployment, and other
+        long-standing challenges remain central to public opinion.
+      </p>
+
+      <p class="intro">
+        Join us for a discussion of the findings, exploring what Iraqis think of the new government and whether early
+        optimism can translate into lasting trust.
+      </p>
+
+      <div class="event-time">
+        <strong>Tuesday, October 6</strong><br />
+        10:00 AM Washington time / 5:00 PM Iraq time
+      </div>
+
+      <div class="register">
+        <p class="register-label">Register to attend using the link below:</p>
+
+        <a
+          class="register-button"
+          href="https://www.atlanticcouncil.org/event/how-iraqis-view-al-zaidis-government-100-days-in/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Register to attend
+        </a>
+
+        <a
+          class="register-url"
+          href="https://www.atlanticcouncil.org/event/how-iraqis-view-al-zaidis-government-100-days-in/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://www.atlanticcouncil.org/event/how-iraqis-view-al-zaidis-government-100-days-in/
+        </a>
+      </div>
+    </article>
+  </main>
+  <script>
+function getFullHeight() {
+  const body = document.body;
+  const html = document.documentElement;
+
+  return Math.ceil(Math.max(
+    body.scrollHeight,
+    body.offsetHeight,
+    html.clientHeight,
+    html.scrollHeight,
+    html.offsetHeight
+  ));
+}
+
+
+/* =========================
+   SEND HEIGHT
+========================== */
+
+function sendHeight() {
+
+  window.parent.postMessage(
+    {
+      type: "iframe-height",
+      height: getFullHeight()
+    },
+    "https://iiacss.org"
+  );
+}
+
+
+/* =========================
+   SEND READING TIME
+========================== */
+
+function sendReadingTime() {
+
+  // نحاول حساب نص المقال فقط
+  const content =
+    document.querySelector("article") ||
+    document.querySelector("main") ||
+    document.body;
+
+  const text = content.innerText.trim();
+
+  const words = text
+    .split(/\s+/)
+    .filter(Boolean)
+    .length;
+
+  const minutes = Math.max(
+    1,
+    Math.ceil(words / 200)
+  );
+
+  window.parent.postMessage(
+    {
+      type: "reading-time",
+      minutes: minutes
+    },
+    "https://iiacss.org"
+  );
+}
+
+
+/* =========================
+   LOAD
+========================== */
+
+window.addEventListener("load", function () {
+
+  sendHeight();
+  sendReadingTime();
+
+  setTimeout(sendHeight, 300);
+  setTimeout(sendHeight, 1000);
+  setTimeout(sendHeight, 2000);
+
+});
+
+
+window.addEventListener("resize", sendHeight);
+
+
+const resizeObserver = new ResizeObserver(function () {
+  sendHeight();
+});
+
+resizeObserver.observe(document.body);
+
+
+/* =========================
+   PEW VIEW
+========================== */
+
+function switchPewView(view) {
+
+  const chartView = document.getElementById("pew-chart-view");
+  const dataView = document.getElementById("pew-data-view");
+  const btnChart = document.getElementById("btn-chart");
+  const btnData = document.getElementById("btn-data");
+
+  if (view === "data") {
+
+    chartView.style.display = "none";
+    dataView.style.display = "block";
+
+    btnData.classList.add("active");
+    btnChart.classList.remove("active");
+
+  } else {
+
+    chartView.style.display = "block";
+    dataView.style.display = "none";
+
+    btnChart.classList.add("active");
+    btnData.classList.remove("active");
+  }
+
+  setTimeout(sendHeight, 50);
+}
+</script>
+
+</body>
+</html>

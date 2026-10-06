@@ -227,36 +227,272 @@
       overflow-wrap: anywhere;
     }
 
-    @media (max-width: 700px) {
+
+    /* =========================
+       RESPONSIVE LAYOUT - NO CROPPING
+    ========================== */
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    /* Hero must always show the complete artwork */
+    .hero {
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: none;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    /* Large desktop */
+    @media (min-width: 1400px) {
+      :root {
+        --max-width: 1240px;
+      }
+
       .logo-strip__inner {
-        min-height: 96px;
-        gap: 20px;
-      }
-
-      .logo {
-        max-width: 46%;
-      }
-
-      .logo img {
-        max-height: 52px;
+        min-height: 120px;
       }
 
       main {
-        padding: 42px 0 64px;
+        padding: 78px 0 105px;
+      }
+    }
+
+    /* Laptop */
+    @media (max-width: 1199px) {
+      :root {
+        --max-width: 980px;
+      }
+
+      .logo-strip__inner,
+      main {
+        width: min(calc(100% - 48px), var(--max-width));
+      }
+
+      main {
+        padding: 54px 0 74px;
       }
 
       .content-card {
-        border-radius: 18px;
+        padding: 46px;
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 5vw, 3.6rem);
+      }
+    }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      .logo-strip__inner {
+        width: calc(100% - 36px);
+        min-height: 96px;
+        gap: 22px;
+        padding: 18px 0;
+      }
+
+      .logo {
+        max-width: 48%;
+      }
+
+      .webinar-logo__name {
+        font-size: clamp(1.15rem, 3.4vw, 1.65rem);
+      }
+
+      .webinar-logo__days {
+        font-size: clamp(1.3rem, 4vw, 1.95rem);
+      }
+
+      .atlantic-logo {
+        width: min(280px, 100%) !important;
+        max-height: 52px !important;
+      }
+
+      main {
+        width: calc(100% - 36px);
+        padding: 38px 0 58px;
+      }
+
+      .content-card {
+        padding: 36px;
+        border-radius: 20px;
+      }
+
+      h1 {
+        font-size: clamp(2.1rem, 6vw, 3.1rem);
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      body {
+        line-height: 1.6;
+      }
+
+      .logo-strip__inner {
+        width: calc(100% - 24px);
+        min-height: 84px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 0;
+      }
+
+      .logo,
+      .logo--left,
+      .logo--right {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      .logo--left {
+        justify-content: flex-start;
+      }
+
+      .logo--right {
+        justify-content: flex-end;
+      }
+
+      .webinar-logo {
+        white-space: normal;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .webinar-logo__name {
+        font-size: clamp(0.92rem, 4vw, 1.08rem);
+      }
+
+      .webinar-logo__days {
+        font-size: clamp(1rem, 4.5vw, 1.2rem);
+      }
+
+      .atlantic-logo {
+        width: min(185px, 100%) !important;
+        max-height: 38px !important;
+      }
+
+      main {
+        width: calc(100% - 20px);
+        padding: 18px 0 36px;
+      }
+
+      .content-card {
+        padding: 22px 18px;
+        border-radius: 14px;
+        box-shadow: 0 10px 28px rgba(17, 35, 59, 0.06);
+      }
+
+      .eyebrow {
+        margin-bottom: 14px;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+      }
+
+      .eyebrow::before {
+        width: 22px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: clamp(1.75rem, 8.6vw, 2.25rem);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        overflow-wrap: normal;
+        word-break: normal;
+      }
+
+      .intro {
+        font-size: 0.96rem;
+      }
+
+      .intro + .intro {
+        margin-top: 17px;
       }
 
       .event-time {
-        padding: 20px;
+        margin-top: 24px;
+        padding: 16px 14px;
+        border-left-width: 3px;
+        border-radius: 0 10px 10px 0;
+        font-size: 0.92rem;
+      }
+
+      .register {
+        margin-top: 24px;
+        padding-top: 20px;
+      }
+
+      .register-label {
+        font-size: 0.94rem;
       }
 
       .register-button {
         width: 100%;
+        min-height: 48px;
+        padding: 12px 16px;
+        font-size: 0.95rem;
+      }
+
+      .register-url {
+        display: none;
       }
     }
+
+    /* Small mobile */
+    @media (max-width: 380px) {
+      .logo-strip__inner {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 10px;
+      }
+
+      .logo--left,
+      .logo--right {
+        justify-content: center;
+      }
+
+      .webinar-logo {
+        justify-content: center;
+      }
+
+      .atlantic-logo {
+        width: min(180px, 72vw) !important;
+      }
+
+      .content-card {
+        padding: 20px 15px;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
+
+      .intro {
+        font-size: 0.93rem;
+      }
+    }
+
   </style>
 </head>
 

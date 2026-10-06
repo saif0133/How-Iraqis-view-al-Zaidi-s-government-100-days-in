@@ -3,550 +3,455 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="How Iraqis view al-Zaidi’s government, 100 days in — IIACSS webinar in partnership with the Atlantic Council." />
+  <meta name="description" content="How Iraqis view al-Zaidi’s government, 100 days in — IIACSS webinar hosted by the Atlantic Council." />
   <title>How Iraqis view al-Zaidi’s government, 100 days in</title>
 
   <style>
-    :root {
-      --navy: #071b33;
-      --navy-2: #0b2747;
-      --text: #162235;
-      --muted: #637084;
-      --line: #e5e9ef;
-      --accent: #f2b620;
-      --white: #ffffff;
-      --page: #f7f9fc;
-      --max-width: 1180px;
+    :root{
+      --blue:#052968;
+      --blue-dark:#031a4e;
+      --blue-mid:#063781;
+      --blue-light:#15479a;
+      --cyan:#FF425F;
+      --cyan-dark:#E93652;
+      --white:#fff;
+      --ink:#0b2a67;
+      --muted:#5e6d86;
+      --line:#e8edf4;
+      --max:1080px;
     }
 
-    * {
-      box-sizing: border-box;
+    *{box-sizing:border-box}
+
+    html{
+      scroll-behavior:smooth;
+      width:100%;
+      overflow-x:hidden;
     }
 
-    html {
-      scroll-behavior: smooth;
+    body{
+      margin:0;
+      width:100%;
+      overflow-x:hidden;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--ink);
+      background:#fff;
+      -webkit-font-smoothing:antialiased;
     }
 
-    body {
-      margin: 0;
-      background: var(--page);
-      color: var(--text);
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .hero {
-      width: 100%;
-      height: min(70vh, 640px);
-      min-height: 280px;
-      overflow: hidden;
-      background: #dfe5ec;
-    }
-
-    .hero img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .logo-strip {
-      background: var(--white);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .logo-strip__inner {
-      width: min(calc(100% - 40px), var(--max-width));
-      min-height: 118px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-      padding: 22px 0;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      max-width: 44%;
-    }
-
-    .logo img {
-      display: block;
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 72px;
-      object-fit: contain;
-    }
-
-    .logo--left {
-      justify-content: flex-start;
-    }
-
-    .logo--right {
-      justify-content: flex-end;
-    }
-
-    .webinar-logo {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 9px;
-      color: var(--navy);
-      white-space: nowrap;
-      line-height: 1;
-    }
-
-    .webinar-logo__name {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.35rem, 2.3vw, 2.1rem);
-      font-weight: 700;
-      letter-spacing: -0.035em;
-    }
-
-    .webinar-logo__days {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.55rem, 2.8vw, 2.55rem);
-      font-weight: 700;
-      color: #e6a72f;
-    }
-
-    .atlantic-logo {
-      max-height: 64px !important;
-      width: min(340px, 100%) !important;
-      object-fit: contain !important;
-    }
-
-    main {
-      width: min(calc(100% - 40px), var(--max-width));
-      margin: 0 auto;
-      padding: 72px 0 96px;
-    }
-
-    .content-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: clamp(30px, 5vw, 64px);
-      box-shadow: 0 18px 55px rgba(17, 35, 59, 0.07);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
-      color: var(--navy-2);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 32px;
-      height: 3px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-
-    h1 {
-      margin: 0 0 28px;
-      max-width: 950px;
-      color: var(--navy);
-      font-size: clamp(2rem, 4.5vw, 4.25rem);
-      line-height: 1.06;
-      letter-spacing: -0.045em;
-      font-weight: 800;
-    }
-
-    .intro {
-      max-width: 940px;
-      margin: 0;
-      color: #344258;
-      font-size: clamp(1rem, 1.35vw, 1.15rem);
-    }
-
-    .intro + .intro {
-      margin-top: 22px;
-    }
-
-    .event-time {
-      margin: 38px 0 0;
-      padding: 24px 28px;
-      border-left: 4px solid var(--accent);
-      border-radius: 0 14px 14px 0;
-      background: #fbf7e9;
-      color: var(--navy);
-      font-size: 1.05rem;
-    }
-
-    .register {
-      margin-top: 38px;
-      padding-top: 30px;
-      border-top: 1px solid var(--line);
-    }
-
-    .register-label {
-      margin: 0 0 16px;
-      font-weight: 800;
-      color: var(--navy);
-    }
-
-    .register-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: var(--navy);
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 800;
-      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 10px 24px rgba(7, 27, 51, 0.16);
-    }
-
-    .register-button:hover {
-      transform: translateY(-2px);
-      background: var(--navy-2);
-      box-shadow: 0 14px 28px rgba(7, 27, 51, 0.22);
-    }
-
-    .register-url {
-      display: block;
-      max-width: 900px;
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      overflow-wrap: anywhere;
-    }
-
+    a{color:inherit}
 
     /* =========================
-       RESPONSIVE LAYOUT - NO CROPPING
+       ARTICLE HERO
     ========================== */
-
-    html,
-    body {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: hidden;
+    .article-hero{
+      position:relative;
+      min-height:500px;
+      overflow:hidden;
+      isolation:isolate;
+      color:#fff;
+      background:#052968;
     }
 
-    img {
-      max-width: 100%;
+    .article-hero::before{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:min(46vw, 620px);
+      height:100%;
+      background-image:url("https://github.com/saif0133/How-Iraqis-view-al-Zaidi-s-government-100-days-in/blob/main/alz.png?raw=true");
+      background-repeat:no-repeat;
+      background-size:contain;
+      background-position:left bottom;
+      z-index:1;
+      pointer-events:none;
     }
 
-    /* Hero must always show the complete artwork */
-    .hero {
-      width: 100%;
-      height: auto;
-      min-height: 0;
-      overflow: hidden;
-      background: #000;
+
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      width:min(calc(100% - 48px), var(--max));
+      margin:0 auto;
+      padding:110px 0 105px;
+      text-align:center;
     }
 
-    .hero img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-width: none;
-      object-fit: contain;
-      object-position: center;
+
+
+
+
+    h1{
+      max-width:820px;
+      margin:0 auto 26px;
+      color:#fff;
+      font-size:clamp(38px,4.15vw,58px);
+      line-height:1.02;
+      letter-spacing:-.035em;
+      font-weight:900;
     }
 
-    /* Large desktop */
-    @media (min-width: 1400px) {
-      :root {
-        --max-width: 1240px;
+    .hero-summary{
+      max-width:780px;
+      margin:0 auto;
+      color:rgba(255,255,255,.88);
+      font-size:15px;
+      line-height:1.48;
+    }
+
+    .hero-date{
+      margin-top:24px;
+      color:rgba(255,255,255,.88);
+      font-size:12px;
+      font-weight:700;
+    }
+
+    /* =========================
+       BODY / FLOATING SHARE
+    ========================== */
+    .article-wrap{
+      position:relative;
+      background:#fff;
+    }
+
+    .share-bar{
+      position:relative;
+      z-index:20;
+      width:max-content;
+      max-width:calc(100% - 28px);
+      margin:-26px auto 0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:8px 10px;
+      border:1px solid #dfe7f0;
+      border-radius:999px;
+      background:#fff;
+      box-shadow:0 10px 28px rgba(5,41,104,.12);
+    }
+
+    .share-label{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:38px;
+      padding:0 10px;
+      color:#052968;
+      font-size:11px;
+      line-height:1;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      white-space:nowrap;
+    }
+
+    .share-link{
+      appearance:none;
+      -webkit-appearance:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 38px;
+      width:38px;
+      height:38px;
+      margin:0;
+      padding:0;
+      border:1px solid #d9e3ee;
+      border-radius:50%;
+      background:#fff;
+      color:#052968;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size:14px;
+      line-height:1;
+      font-weight:800;
+      text-align:center;
+      text-decoration:none;
+      cursor:pointer;
+      user-select:none;
+      transition:
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+    }
+
+    .share-link:hover,
+    .share-link:focus-visible{
+      color:#fff;
+      background:#FF425F;
+      border-color:#FF425F;
+      transform:translateY(-2px);
+      outline:none;
+    }
+
+    .share-link svg{
+      display:block;
+      width:16px;
+      height:16px;
+      fill:currentColor;
+      pointer-events:none;
+    }
+
+    .article-inner{
+      width:min(calc(100% - 48px), var(--max));
+      margin:0 auto;
+      padding:46px 0 82px;
+    }
+
+    .article-inner p{
+      margin:0 0 24px;
+      max-width:1000px;
+      color:#153478;
+      font-size:15px;
+      line-height:1.58;
+    }
+
+    .article-inner strong{
+      font-weight:800;
+    }
+
+    .event-box{
+      margin:36px 0 0;
+      padding:28px 30px;
+      border-left:5px solid var(--cyan);
+      background:#f4f8fc;
+    }
+
+    .event-box-title{
+      margin:0 0 8px !important;
+      color:#06275f !important;
+      font-size:17px !important;
+      font-weight:800;
+    }
+
+    .event-box p{
+      margin:0 0 6px;
+      color:#294879;
+    }
+
+    .register-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      margin-top:18px;
+      padding:0 20px;
+      color:#fff;
+      background:var(--cyan);
+      text-decoration:none;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      transition:.2s ease;
+    }
+
+    .register-button:hover{
+      background:var(--cyan-dark);
+      transform:translateY(-1px);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+    @media (max-width:900px){
+      .article-hero::before{
+        width:min(44vw, 430px);
+        opacity:.95;
       }
 
-      .logo-strip__inner {
-        min-height: 120px;
+      .article-hero{
+        min-height:500px;
       }
 
-      main {
-        padding: 78px 0 105px;
+      .hero-inner{
+        width:min(calc(100% - 36px), var(--max));
+        padding:88px 0 88px;
+      }
+
+
+      h1{
+        max-width:740px;
+        font-size:clamp(34px,6vw,49px);
+      }
+
+      .article-inner{
+        width:min(calc(100% - 36px), var(--max));
+      }
+
+    }
+
+    @media (max-width:600px){
+      .article-hero::before{
+        width:min(52vw, 290px);
+        background-position:left bottom;
+        opacity:.9;
+      }
+
+      .article-hero{
+        min-height:auto;
+      }
+
+      .hero-inner{
+        width:calc(100% - 28px);
+        padding:64px 0 66px;
+      }
+
+
+
+
+
+      h1{
+        margin-bottom:20px;
+        font-size:clamp(31px,9.5vw,42px);
+        line-height:1.04;
+      }
+
+      .hero-summary{
+        font-size:13px;
+        line-height:1.5;
+      }
+
+      .hero-date{
+        margin-top:18px;
+        font-size:11px;
+      }
+
+      .share-bar{
+        max-width:calc(100% - 20px);
+        margin:-22px auto 0;
+        gap:6px;
+        padding:7px 8px;
+      }
+
+      .share-label{
+        min-height:36px;
+        padding:0 6px;
+        font-size:10px;
+      }
+
+      .share-link{
+        flex-basis:36px;
+        width:36px;
+        height:36px;
+      }
+
+      .article-inner{
+        width:calc(100% - 28px);
+        padding:34px 0 54px;
+      }
+
+      .article-inner p{
+        font-size:14px;
+        line-height:1.62;
+      }
+
+      .event-box{
+        margin-top:28px;
+        padding:22px 20px;
+      }
+
+      .register-button{
+        width:100%;
       }
     }
 
-    /* Laptop */
-    @media (max-width: 1199px) {
-      :root {
-        --max-width: 980px;
+    @media (max-width:360px){
+      .article-hero::before{
+        width:48vw;
+        opacity:.85;
       }
 
-      .logo-strip__inner,
-      main {
-        width: min(calc(100% - 48px), var(--max-width));
+      .hero-inner{
+        width:calc(100% - 22px);
       }
 
-      main {
-        padding: 54px 0 74px;
+      h1{
+        font-size:29px;
       }
 
-      .content-card {
-        padding: 46px;
+      .share-label{
+        padding:0 4px;
       }
 
-      h1 {
-        font-size: clamp(2.3rem, 5vw, 3.6rem);
-      }
-    }
-
-    /* Tablet */
-    @media (max-width: 900px) {
-      .logo-strip__inner {
-        width: calc(100% - 36px);
-        min-height: 96px;
-        gap: 22px;
-        padding: 18px 0;
+      .share-link{
+        flex-basis:34px;
+        width:34px;
+        height:34px;
       }
 
-      .logo {
-        max-width: 48%;
-      }
-
-      .webinar-logo__name {
-        font-size: clamp(1.15rem, 3.4vw, 1.65rem);
-      }
-
-      .webinar-logo__days {
-        font-size: clamp(1.3rem, 4vw, 1.95rem);
-      }
-
-      .atlantic-logo {
-        width: min(280px, 100%) !important;
-        max-height: 52px !important;
-      }
-
-      main {
-        width: calc(100% - 36px);
-        padding: 38px 0 58px;
-      }
-
-      .content-card {
-        padding: 36px;
-        border-radius: 20px;
-      }
-
-      h1 {
-        font-size: clamp(2.1rem, 6vw, 3.1rem);
+      .article-inner{
+        width:calc(100% - 22px);
       }
     }
-
-    /* Mobile */
-    @media (max-width: 600px) {
-      body {
-        line-height: 1.6;
-      }
-
-      .logo-strip__inner {
-        width: calc(100% - 24px);
-        min-height: 84px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 14px;
-        padding: 14px 0;
-      }
-
-      .logo,
-      .logo--left,
-      .logo--right {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-      }
-
-      .logo--left {
-        justify-content: flex-start;
-      }
-
-      .logo--right {
-        justify-content: flex-end;
-      }
-
-      .webinar-logo {
-        white-space: normal;
-        flex-wrap: wrap;
-        gap: 4px;
-      }
-
-      .webinar-logo__name {
-        font-size: clamp(0.92rem, 4vw, 1.08rem);
-      }
-
-      .webinar-logo__days {
-        font-size: clamp(1rem, 4.5vw, 1.2rem);
-      }
-
-      .atlantic-logo {
-        width: min(185px, 100%) !important;
-        max-height: 38px !important;
-      }
-
-      main {
-        width: calc(100% - 20px);
-        padding: 18px 0 36px;
-      }
-
-      .content-card {
-        padding: 22px 18px;
-        border-radius: 14px;
-        box-shadow: 0 10px 28px rgba(17, 35, 59, 0.06);
-      }
-
-      .eyebrow {
-        margin-bottom: 14px;
-        font-size: 0.68rem;
-        letter-spacing: 0.08em;
-      }
-
-      .eyebrow::before {
-        width: 22px;
-      }
-
-      h1 {
-        margin-bottom: 20px;
-        font-size: clamp(1.75rem, 8.6vw, 2.25rem);
-        line-height: 1.08;
-        letter-spacing: -0.03em;
-        overflow-wrap: normal;
-        word-break: normal;
-      }
-
-      .intro {
-        font-size: 0.96rem;
-      }
-
-      .intro + .intro {
-        margin-top: 17px;
-      }
-
-      .event-time {
-        margin-top: 24px;
-        padding: 16px 14px;
-        border-left-width: 3px;
-        border-radius: 0 10px 10px 0;
-        font-size: 0.92rem;
-      }
-
-      .register {
-        margin-top: 24px;
-        padding-top: 20px;
-      }
-
-      .register-label {
-        font-size: 0.94rem;
-      }
-
-      .register-button {
-        width: 100%;
-        min-height: 48px;
-        padding: 12px 16px;
-        font-size: 0.95rem;
-      }
-
-      .register-url {
-        display: none;
-      }
-    }
-
-    /* Small mobile */
-    @media (max-width: 380px) {
-      .logo-strip__inner {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 10px;
-      }
-
-      .logo--left,
-      .logo--right {
-        justify-content: center;
-      }
-
-      .webinar-logo {
-        justify-content: center;
-      }
-
-      .atlantic-logo {
-        width: min(180px, 72vw) !important;
-      }
-
-      .content-card {
-        padding: 20px 15px;
-      }
-
-      h1 {
-        font-size: 1.65rem;
-      }
-
-      .intro {
-        font-size: 0.93rem;
-      }
-    }
-
   </style>
 </head>
 
 <body>
-  <header>
-    <section class="hero" aria-label="Webinar cover image">
-      <img src="https://github.com/saif0133/How-Iraqis-view-al-Zaidi-s-government-100-days-in/blob/main/alzaidi%20100%20dayws.png?raw=true" />
-    </section>
 
-    <section class="logo-strip" aria-label="Event partners">
-      <div class="logo-strip__inner">
-        <div class="logo logo--left">
-          <div class="webinar-logo" aria-label="Al-Zaidi’s 100 Days webinar">
-            <span class="webinar-logo__name">Al-Zaidi’s</span>
-            <span class="webinar-logo__days">100 Days</span>
-          </div>
-        </div>
+  <header class="article-hero">
+    <div class="hero-inner">
+<h1>How Iraqis view al-Zaidi’s government, 100 days in</h1>
 
-        <div class="logo logo--right">
-          <img
-            class="atlantic-logo"
-            src="https://bm.ge/uploads/files/2026/04/14/309545/atlantic-council_w_h.jpeg"
-            alt="Atlantic Council"
-          />
-        </div>
-      </div>
-    </section>
+      <p class="hero-summary">
+        IIACSS’s 100 Days Survey examines how Iraqis assess the al-Zaidi government during its first months in office, including early optimism and concerns over corruption, unemployment, and other long-standing challenges.
+      </p>
+
+      <div class="hero-date">06.10.26</div>
+
+    </div>
   </header>
 
-  <main>
-    <article class="content-card">
-      <div class="eyebrow">IIACSS Webinar</div>
+  <main class="article-wrap">
 
-      <h1>How Iraqis view al-Zaidi’s government, 100 days in</h1>
+    <div class="share-bar" aria-label="Share this page">
+      <div class="share-label">Share</div>
 
-      <p class="intro">
-        IIACSS’s 100 Days Survey examines how Iraqis assess the al-Zaidi government during its first months in office.
-        Based on a nationally representative survey of 2,056 Iraqis, the findings show strong early optimism, with
-        77% expressing a positive view of the government. Yet concerns over corruption, unemployment, and other
-        long-standing challenges remain central to public opinion.
+      <button class="share-link" type="button" onclick="sharePage('facebook')" aria-label="Share on Facebook" title="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M13.7 22v-9h3l.45-3.5H13.7V7.26c0-1.01.28-1.7 1.74-1.7H17.3V2.43c-.32-.04-1.42-.13-2.7-.13-2.67 0-4.5 1.63-4.5 4.63V9.5H7.08V13h3.02v9h3.6z"/>
+        </svg>
+      </button>
+
+      <button class="share-link" type="button" onclick="sharePage('x')" aria-label="Share on X" title="X">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.23-8.27L2.94 2h6.4l4.42 5.84L18.9 2zm-1.1 17.84h1.72L8.4 4.05H6.55L17.8 19.84z"/>
+        </svg>
+      </button>
+
+      <button class="share-link" type="button" onclick="sharePage('linkedin')" aria-label="Share on LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5.34 3.5A2.34 2.34 0 1 1 5.34 8.18 2.34 2.34 0 0 1 5.34 3.5zM3.32 9.85h4.04V22H3.32V9.85zm6.54 0h3.87v1.66h.05c.54-1.02 1.86-2.1 3.83-2.1 4.1 0 4.86 2.7 4.86 6.2V22h-4.03v-5.67c0-1.35-.03-3.09-1.88-3.09-1.88 0-2.17 1.47-2.17 2.99V22H9.86V9.85z"/>
+        </svg>
+      </button>
+
+      <button class="share-link" type="button" onclick="sharePage('email')" aria-label="Share by email" title="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.51l9 5.62 9-5.62V7H3zm18 10V9.87l-8.47 5.29a1 1 0 0 1-1.06 0L3 9.87V17h18z"/>
+        </svg>
+      </button>
+    </div>
+
+    <article class="article-inner">
+
+      <p>
+        IIACSS’s <strong>100 Days Survey</strong> examines how Iraqis assess the al-Zaidi government during its first months in office. Based on a nationally representative survey of <strong>2,056 Iraqis</strong>, the findings show strong early optimism, with <strong>77% expressing a positive view of the government</strong>. Yet concerns over corruption, unemployment, and other long-standing challenges remain central to public opinion.
       </p>
 
-      <p class="intro">
-        Join us for a discussion of the findings, exploring what Iraqis think of the new government and whether early
-        optimism can translate into lasting trust.
+      <p>
+        Join us for a discussion of the findings, exploring what Iraqis think of the new government and whether early optimism can translate into lasting trust.
       </p>
 
-      <div class="event-time">
-        <strong>Tuesday, October 6</strong><br />
-        10:00 AM Washington time / 5:00 PM Iraq time
-      </div>
+      <p>
+        The discussion is hosted by the <strong>Atlantic Council</strong> and will examine how Iraqis evaluate the government’s performance so far, which issues are shaping public opinion, and what these early attitudes may mean for confidence in the government over the months ahead.
+      </p>
 
-      <div class="register">
-        <p class="register-label">Register to attend using the link below:</p>
+      <div class="event-box">
+        <p class="event-box-title">Join the discussion</p>
+        <p><strong>Tuesday, October 6</strong></p>
+        <p>10:00 AM Washington time / 5:00 PM Iraq time</p>
 
         <a
           class="register-button"
@@ -556,140 +461,135 @@
         >
           Register to attend
         </a>
-
-        <a
-          class="register-url"
-          href="https://www.atlanticcouncil.org/event/how-iraqis-view-al-zaidis-government-100-days-in/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          https://www.atlanticcouncil.org/event/how-iraqis-view-al-zaidis-government-100-days-in/
-        </a>
       </div>
+
     </article>
   </main>
+
+
   <script>
-function getFullHeight() {
-  const body = document.body;
-  const html = document.documentElement;
+    const SHARE_FALLBACK_URL =
+      "https://www.atlanticcouncil.org/event/how-iraqis-view-al-zaidis-government-100-days-in/";
 
-  return Math.ceil(Math.max(
-    body.scrollHeight,
-    body.offsetHeight,
-    html.clientHeight,
-    html.scrollHeight,
-    html.offsetHeight
-  ));
-}
+    function getShareUrl() {
+      // When this page is embedded on IIACSS, share the parent article URL.
+      if (
+        document.referrer &&
+        /^https?:\/\/([^/]+\.)?iiacss\.org\//i.test(document.referrer)
+      ) {
+        return document.referrer;
+      }
 
+      // If opened from a real web URL, share this page.
+      if (window.location.protocol === "http:" || window.location.protocol === "https:") {
+        return window.location.href;
+      }
 
-/* =========================
-   SEND HEIGHT
-========================== */
+      // Local-file preview fallback.
+      return SHARE_FALLBACK_URL;
+    }
 
-function sendHeight() {
+    function sharePage(network) {
+      const url = getShareUrl();
+      const encodedUrl = encodeURIComponent(url);
+      const title = "How Iraqis view al-Zaidi’s government, 100 days in";
+      const encodedTitle = encodeURIComponent(title);
 
-  window.parent.postMessage(
-    {
-      type: "iframe-height",
-      height: getFullHeight()
-    },
-    "https://iiacss.org"
-  );
-}
+      let shareUrl = "";
 
+      if (network === "facebook") {
+        shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" + encodedUrl;
+      } else if (network === "x") {
+        shareUrl =
+          "https://twitter.com/intent/tweet?url=" +
+          encodedUrl +
+          "&text=" +
+          encodedTitle;
+      } else if (network === "linkedin") {
+        shareUrl =
+          "https://www.linkedin.com/sharing/share-offsite/?url=" + encodedUrl;
+      } else if (network === "email") {
+        window.location.href =
+          "mailto:?subject=" +
+          encodedTitle +
+          "&body=" +
+          encodeURIComponent(title + "\n\n" + url);
+        return;
+      }
 
-/* =========================
-   SEND READING TIME
-========================== */
+      if (shareUrl) {
+        const popup = window.open(
+          shareUrl,
+          "_blank",
+          "noopener,noreferrer,width=720,height=620"
+        );
 
-function sendReadingTime() {
+        // Fallback in case the browser blocks the popup.
+        if (!popup) {
+          window.open(shareUrl, "_blank");
+        }
+      }
+    }
+  </script>
 
-  // نحاول حساب نص المقال فقط
-  const content =
-    document.querySelector("article") ||
-    document.querySelector("main") ||
-    document.body;
+  <script>
+    function getFullHeight() {
+      const body = document.body;
+      const html = document.documentElement;
+      return Math.ceil(Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight
+      ));
+    }
 
-  const text = content.innerText.trim();
+    function sendHeight() {
+      window.parent.postMessage(
+        {
+          type: "iframe-height",
+          height: getFullHeight()
+        },
+        "https://iiacss.org"
+      );
+    }
 
-  const words = text
-    .split(/\s+/)
-    .filter(Boolean)
-    .length;
+    function sendReadingTime() {
+      const content =
+        document.querySelector("article") ||
+        document.querySelector("main") ||
+        document.body;
 
-  const minutes = Math.max(
-    1,
-    Math.ceil(words / 200)
-  );
+      const text = content.innerText.trim();
+      const words = text.split(/\s+/).filter(Boolean).length;
+      const minutes = Math.max(1, Math.ceil(words / 200));
 
-  window.parent.postMessage(
-    {
-      type: "reading-time",
-      minutes: minutes
-    },
-    "https://iiacss.org"
-  );
-}
+      window.parent.postMessage(
+        {
+          type: "reading-time",
+          minutes: minutes
+        },
+        "https://iiacss.org"
+      );
+    }
 
+    window.addEventListener("load", function () {
+      sendHeight();
+      sendReadingTime();
+      setTimeout(sendHeight, 300);
+      setTimeout(sendHeight, 1000);
+      setTimeout(sendHeight, 2000);
+    });
 
-/* =========================
-   LOAD
-========================== */
+    window.addEventListener("resize", sendHeight);
 
-window.addEventListener("load", function () {
+    const resizeObserver = new ResizeObserver(function () {
+      sendHeight();
+    });
 
-  sendHeight();
-  sendReadingTime();
-
-  setTimeout(sendHeight, 300);
-  setTimeout(sendHeight, 1000);
-  setTimeout(sendHeight, 2000);
-
-});
-
-
-window.addEventListener("resize", sendHeight);
-
-
-const resizeObserver = new ResizeObserver(function () {
-  sendHeight();
-});
-
-resizeObserver.observe(document.body);
-
-
-/* =========================
-   PEW VIEW
-========================== */
-
-function switchPewView(view) {
-
-  const chartView = document.getElementById("pew-chart-view");
-  const dataView = document.getElementById("pew-data-view");
-  const btnChart = document.getElementById("btn-chart");
-  const btnData = document.getElementById("btn-data");
-
-  if (view === "data") {
-
-    chartView.style.display = "none";
-    dataView.style.display = "block";
-
-    btnData.classList.add("active");
-    btnChart.classList.remove("active");
-
-  } else {
-
-    chartView.style.display = "block";
-    dataView.style.display = "none";
-
-    btnChart.classList.add("active");
-    btnData.classList.remove("active");
-  }
-
-  setTimeout(sendHeight, 50);
-}
-</script>
+    resizeObserver.observe(document.body);
+  </script>
 
 </body>
 </html>

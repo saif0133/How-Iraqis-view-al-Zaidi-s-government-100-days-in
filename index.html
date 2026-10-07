@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="IIACSS 100 Days Survey, How Iraqis view the al-Zaidi government.">
-<title>How Iraqis view al-Zaidi's government, 100 days in</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="An IIACSS article examining how Iraqis assess the al-Zaidi government's first 100 days, with all 20 published survey charts." name="description"/>
+<title>100 days in: How Iraqis view al-Zaidi's government | IIACSS</title>
 <style>
 :root{
   --bg:#f6f7fb;--paper:#fff;--ink:#11162a;--muted:#6c7286;
@@ -102,11 +103,19 @@ a{color:inherit;text-decoration:none}
 }
 h1{font-size:clamp(2.6rem,5.4vw,5.6rem);line-height:.98;letter-spacing:-.06em;margin:0 0 24px;max-width:920px}
 .hero-copy{
+  display:inline-block;
   max-width:760px;
   margin:0 auto;
-  color:rgba(255,255,255,.78);
+  padding:16px 20px;
+  color:rgba(255,255,255,.9);
   line-height:1.7;
   font-size:1.08rem;
+  background:rgba(8,17,39,.34);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 18px 50px rgba(0,0,0,.16);
 }
 .meta{
   display:flex;
@@ -393,528 +402,708 @@ body.modal-open{overflow:hidden}
   *,*:before,*:after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
 }
+
+
+/* ===== Editorial article layout ===== */
+.article-main{padding:86px 0 110px}
+.article-shell{max-width:1320px}
+.story-article{width:100%}
+.story-intro,
+.story-copy{
+  width:min(100%,820px);
+  margin-inline:auto;
+}
+.story-intro{margin-bottom:96px}
+.story-intro h2{font-size:clamp(2.25rem,4.2vw,4.4rem);max-width:960px}
+.story-intro p,
+.story-copy p{
+  color:#3f465c;
+  font-size:1.08rem;
+  line-height:1.86;
+  margin:18px 0 0;
+}
+.story-intro .story-lede{
+  color:var(--ink);
+  font-size:clamp(1.28rem,1.8vw,1.62rem);
+  line-height:1.62;
+  letter-spacing:-.018em;
+  margin-top:28px;
+}
+.story-intro .story-lede:first-letter{
+  float:left;
+  font-size:4.8rem;
+  line-height:.78;
+  padding:.13em .12em 0 0;
+  color:var(--pink);
+  font-weight:850;
+  letter-spacing:-.08em;
+}
+.story-question{
+  margin-top:30px;
+  padding:26px 28px;
+  border-left:4px solid var(--pink);
+  background:#fff;
+  border-radius:0 18px 18px 0;
+  box-shadow:0 16px 44px rgba(10,17,39,.07);
+  color:var(--ink);
+  font-size:1.18rem;
+  font-weight:750;
+  line-height:1.6;
+}
+.story-section{
+  padding:92px 0;
+  border-top:1px solid var(--line);
+}
+.story-section:first-of-type{border-top:0;padding-top:0}
+.story-copy{margin-bottom:42px}
+.story-copy h2{
+  max-width:900px;
+  font-size:clamp(2.15rem,3.65vw,3.75rem);
+  line-height:1.04;
+}
+.story-charts{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:22px;
+  align-items:start;
+}
+.story-charts .chart-card{
+  grid-column:span 6;
+  padding:24px;
+}
+.story-charts .chart-card.story-wide{grid-column:1 / -1}
+.story-charts .chart-top{min-height:118px}
+.story-charts .chart-card.story-wide .chart-top{
+  min-height:0;
+  max-width:840px;
+}
+.story-charts .embed-wrap iframe{height:500px}
+.story-charts .chart-card.story-wide .embed-wrap iframe{height:570px}
+.story-closing{
+  margin-top:4px;
+  padding-bottom:54px;
+}
+.story-closing .story-copy h2{max-width:780px}
+.story-closing .story-question{
+  background:var(--navy);
+  color:#fff;
+  border-left-color:var(--cyan);
+  box-shadow:0 26px 70px rgba(8,17,39,.17);
+}
+.article-main .source{
+  width:min(100%,820px);
+  margin:36px auto 0;
+}
+
+
+.story-break{
+  grid-column:1 / -1;
+  width:min(100%,900px);
+  margin:34px auto 14px;
+  padding:30px 32px;
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 100% 0%,rgba(118,88,255,.08),transparent 34%),
+    radial-gradient(circle at 0% 100%,rgba(255,66,95,.07),transparent 34%),
+    #fff;
+  border:1px solid var(--line);
+  box-shadow:0 18px 48px rgba(10,17,39,.07);
+}
+.story-break .story-break-label{
+  color:var(--pink);
+  font-size:.72rem;
+  font-weight:850;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:9px;
+}
+.story-break h3{
+  margin:0;
+  max-width:760px;
+  font-size:clamp(1.45rem,2.4vw,2.2rem);
+  line-height:1.12;
+  letter-spacing:-.035em;
+}
+.story-break p{
+  max-width:760px;
+  margin:12px 0 0;
+  color:var(--muted);
+  font-size:.98rem;
+  line-height:1.72;
+}
+.watch-section{
+  margin:54px 0 10px;
+  padding:34px;
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 8% 12%,rgba(255,66,95,.13),transparent 34%),
+    radial-gradient(circle at 92% 88%,rgba(32,189,200,.10),transparent 34%),
+    linear-gradient(135deg,#081127 0%,#111b42 100%);
+  color:#fff;
+  box-shadow:0 24px 70px rgba(8,17,39,.16);
+}
+.watch-copy{max-width:780px;margin-bottom:24px}
+.watch-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:10px;
+  color:#9cecf0;
+  font-size:.76rem;
+  font-weight:850;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.watch-section h2{
+  margin:0;
+  max-width:820px;
+  font-size:clamp(1.8rem,3vw,3rem);
+  line-height:1.05;
+  letter-spacing:-.04em;
+}
+.watch-section p{
+  max-width:720px;
+  margin:14px 0 0;
+  color:rgba(255,255,255,.72);
+  line-height:1.7;
+}
+.video-frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-radius:22px;
+  background:#000;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 20px 54px rgba(0,0,0,.28);
+}
+.video-frame iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.article-conclusion{
+  position:relative;
+  overflow:hidden;
+  width:min(100%,1040px);
+  margin:48px auto 6px;
+  padding:clamp(34px,5vw,58px);
+  border-radius:32px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 88% 12%,rgba(32,189,200,.20),transparent 28%),
+    radial-gradient(circle at 8% 90%,rgba(255,66,95,.20),transparent 31%),
+    linear-gradient(135deg,#071126 0%,#101a3d 54%,#17173d 100%);
+  box-shadow:0 30px 80px rgba(8,17,39,.20);
+}
+.article-conclusion:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:40px 40px;
+  mask-image:linear-gradient(#000,transparent 92%);
+}
+.article-conclusion > *{position:relative;z-index:1}
+.conclusion-label{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.07);
+  font-size:.72rem;
+  font-weight:850;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+.article-conclusion h2{
+  max-width:790px;
+  margin:0;
+  color:#fff;
+  font-size:clamp(2rem,3.7vw,3.7rem);
+  line-height:1.04;
+  letter-spacing:-.045em;
+}
+.article-conclusion p{
+  max-width:820px;
+  margin:18px 0 0;
+  color:rgba(255,255,255,.76);
+  font-size:1.03rem;
+  line-height:1.78;
+}
+.conclusion-final{
+  margin-top:28px;
+  padding-top:23px;
+  border-top:1px solid rgba(255,255,255,.14);
+  color:#fff;
+  font-size:clamp(1.18rem,1.8vw,1.45rem);
+  font-weight:800;
+  line-height:1.5;
+}
+
+@media (max-width:900px){
+  .article-main{padding-top:66px}
+  .story-intro{margin-bottom:72px}
+  .story-section{padding:72px 0}
+  .story-charts{grid-template-columns:1fr}
+  .story-charts .chart-card,
+  .story-charts .chart-card.story-wide{grid-column:1/-1}
+  .story-charts .chart-top{min-height:0}
+  .story-break{margin:28px auto 10px}
+  .story-charts .embed-wrap iframe,
+  .story-charts .chart-card.story-wide .embed-wrap iframe{height:500px}
+}
+
+@media (max-width:680px){
+  .article-main{padding:52px 0 78px}
+  .story-intro{margin-bottom:58px}
+  .story-intro h2,
+  .story-copy h2{letter-spacing:-.035em}
+  .story-intro p,
+  .story-copy p{font-size:1rem;line-height:1.78}
+  .story-intro .story-lede{font-size:1.2rem;line-height:1.62}
+  .story-intro .story-lede:first-letter{font-size:4rem}
+  .story-question{padding:21px 20px;font-size:1.03rem}
+  .story-break{padding:24px 20px;margin:24px auto 8px}
+  .article-conclusion{padding:30px 23px;border-radius:26px;margin-top:36px}
+  .watch-section{padding:24px 18px;border-radius:24px;margin-top:38px}
+  .video-frame{border-radius:16px}
+  .story-section{padding:60px 0}
+  .story-copy{margin-bottom:30px}
+  .story-charts{display:block}
+  .story-charts .chart-card{margin-bottom:18px;padding:18px 14px}
+  .story-charts .embed-wrap iframe,
+  .story-charts .chart-card.story-wide .embed-wrap iframe{height:440px}
+}
 </style>
 </head>
 <body>
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-media">
-      <div class="hero-glow"></div>
-      <img class="hero-image" src="https://github.com/saif0133/How-Iraqis-view-al-Zaidi-s-government-100-days-in/blob/main/alz.png?raw=true" alt="Ali al-Zaidi in front of the Iraqi flag">
-    </div>
-    <div class="hero-content">
-      <div class="eyebrow">IIACSS · 100 Days Survey · 2026</div>
-      <h1>How Iraqis view al-Zaidi’s government, 100 days in</h1>
-      <p class="hero-copy">A full visual reading of the nationwide survey, all twenty published charts, from leadership approval and institutional ratings to service delivery, the economy, and corruption.</p>
-      <div class="meta">
-        <span>2,056 respondents</span>
-        <span>August 5–31, 2026</span>
-        <span>±3.5 percentage points</span>
-        <span>20 published charts</span>
-      </div>
-    </div>
-  </div>
+<div class="hero-inner">
+<div class="hero-media">
+<div class="hero-glow"></div>
+<img alt="Ali al-Zaidi in front of the Iraqi flag" class="hero-image" src="https://github.com/saif0133/How-Iraqis-view-al-Zaidi-s-government-100-days-in/blob/main/alz.png?raw=true"/>
+</div>
+<div class="hero-content">
+<div class="eyebrow">IIACSS · Iraq · 100 Days Survey · 2026</div>
+<h1>How Iraqis view al-Zaidi’s government, 100 days in</h1>
+<p class="hero-copy">One hundred days is barely a moment in the life of a country. In politics, it is often the first real test of whether a new government can turn promises into progress.</p>
+<div class="meta">
+<span>2,056 respondents</span>
+<span>August 5 to 31, 2026</span>
+<span>±3.5 percentage points</span>
+<!--<span>20 published charts</span>-->
+</div>
+</div>
+</div>
+</section>
+<main class="article-main">
+<div class="shell article-shell">
+<article class="story-article">
+<header class="story-intro reveal">
+<div class="kicker">The first 100 days</div>
+<h2>What has actually changed, and what does it tell us about the road ahead?</h2>
+<p class="story-lede">One hundred days. In the life of a country, it is barely a moment. But in politics, it has become the first real test of whether a new government can turn promises into progress.</p>
+<p>When Ali al-Zaidi was sworn in as Iraq’s prime minister on May 14, he arrived under unusual circumstances. A businessman with no previous government or political post, he was chosen as a consensus candidate after months of deadlock. He took office with an incomplete cabinet: parliament approved 14 ministers while nine ministries, including Interior and Defence, were still pending.</p>
+<p>From his first day, the government faced overlapping pressures: oil exports, liquidity and public salaries, bringing weapons under state control, corruption, a deepening water and drought crisis, and a tense regional environment.</p>
+<p>The government says it has already opened files that had been delayed for years. It points to recovered public funds and gold, a new four-year government program, and reforms in finance and electricity. Critics argue that many of these decisions have not yet translated into tangible changes in daily life.</p>
+<div class="story-question">So the central question is not simply whether the government has acted. It is whether Iraqis believe those actions are producing results.</div>
+</header>
+<section class="story-section reveal" id="leadership">
+<div class="story-copy">
+<div class="kicker">01 · The opening mandate</div>
+<h2>A strong start begins with al-Zaidi himself.</h2>
+<p>The clearest finding in the survey is the prime minister’s relatively strong personal opening position. Seventy-seven percent say they are somewhat or fully satisfied with his selection, while 75 percent say he has borne the responsibilities of office to a great or moderate extent.</p>
+<p>Those numbers do not tell us whether the government has solved Iraq’s structural problems. They tell us something more immediate: after a difficult formation process, al-Zaidi begins with substantial public room to act. The charts below show that mandate from three angles, his selection, his overall evaluation, and whether Iraqis believe he has carried the weight of the office.</p>
+</div>
+<div class="story-charts">
+<article class="chart-card reveal" data-article-order="01" data-chart="01">
+<div class="chart-top">
+<div>
+<div class="chart-number">01 / 20</div>
+<h3>Satisfaction with the selection of Ali al-Zaidi as prime minister</h3>
+<p>How satisfied Iraqis are with the selection of Ali al-Zaidi, broken down by community.</p>
+</div>
+<button aria-label="Expand chart 01" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30414211/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30414211/embed" title="Satisfaction with the selection of Ali al-Zaidi as prime minister">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal" data-article-order="02" data-chart="04">
+<div class="chart-top">
+<div>
+<div class="chart-number">02 / 20</div>
+<h3>Evaluation of the prime minister</h3>
+<p>Ratings of the prime minister on the same 1 to 10 scale.</p>
+</div>
+<button aria-label="Expand chart 04" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30414889/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30414889/embed" title="Evaluation of the prime minister">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal story-wide" data-article-order="03" data-chart="18">
+<div class="chart-top">
+<div>
+<div class="chart-number">03 / 20</div>
+<h3>Has the prime minister borne his responsibilities?</h3>
+<p>Views of the prime minister's ability to bear his responsibilities since government formation.</p>
+</div>
+<button aria-label="Expand chart 18" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30428129/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30428129/embed" title="Has the prime minister borne his responsibilities?">
+</iframe>
+</div>
+</article>
+</div>
+</section>
+<section class="story-section reveal" id="institutions">
+<div class="story-copy">
+<div class="kicker">02 · Beyond the prime minister</div>
+<h2>Personal approval is not the same thing as confidence in the political system.</h2>
+<p>A new prime minister does not govern alone. The presidency, cabinet, parliament, its speaker, and the judiciary all shape whether political decisions can be turned into durable policy.</p>
+<p>That makes the institutional ratings especially important. Read together, they show whether the early confidence surrounding al-Zaidi extends to the wider state, or whether the public is separating its view of the prime minister from its view of the institutions around him.</p>
+</div>
+<div class="story-charts">
+<article class="chart-card reveal" data-article-order="04" data-chart="02">
+<div class="chart-top">
+<div>
+<div class="chart-number">04 / 20</div>
+<h3>Satisfaction with the selection of Nizar Amidi as president</h3>
+<p>Public satisfaction with the selection of the president of the republic.</p>
+</div>
+<button aria-label="Expand chart 02" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30414291/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30414291/embed" title="Satisfaction with the selection of Nizar Amidi as president">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal" data-article-order="05" data-chart="03">
+<div class="chart-top">
+<div>
+<div class="chart-number">05 / 20</div>
+<h3>Evaluation of the president of the republic</h3>
+<p>Ratings on a 1 to 10 scale, where 1 is the lowest and 10 is the highest.</p>
+</div>
+<button aria-label="Expand chart 03" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30414804/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30414804/embed" title="Evaluation of the president of the republic">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal story-wide" data-article-order="06" data-chart="05">
+<div class="chart-top">
+<div>
+<div class="chart-number">06 / 20</div>
+<h3>Evaluation of ministers in general</h3>
+<p>How Iraqis rate ministers in general.</p>
+</div>
+<button aria-label="Expand chart 05" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30414916/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30414916/embed" title="Evaluation of ministers in general">
+</iframe>
+</div>
+</article>
+<div class="story-break reveal">
+<div class="story-break-label">The institutional picture</div>
+<h3>From individual officeholders to the institutions that carry the system.</h3>
+<p>The first three ratings focus on the president and the cabinet. The next step is broader. Parliament, its speaker, and the judiciary shape legislation, oversight, and the implementation of public decisions. Their evaluations help show where confidence in political leadership begins to diverge from confidence in the institutions around it.</p>
+</div>
+<article class="chart-card reveal" data-article-order="07" data-chart="06">
+<div class="chart-top">
+<div>
+<div class="chart-number">07 / 20</div>
+<h3>Evaluation of the speaker of Parliament</h3>
+<p>Public evaluation of the speaker of Parliament.</p>
+</div>
+<button aria-label="Expand chart 06" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30415161/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30415161/embed" title="Evaluation of the speaker of Parliament">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal" data-article-order="08" data-chart="07">
+<div class="chart-top">
+<div>
+<div class="chart-number">08 / 20</div>
+<h3>Evaluation of Parliament</h3>
+<p>How Iraqis rate Parliament as an institution.</p>
+</div>
+<button aria-label="Expand chart 07" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30415209/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30415209/embed" title="Evaluation of Parliament">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal story-wide" data-article-order="09" data-chart="08">
+<div class="chart-top">
+<div>
+<div class="chart-number">09 / 20</div>
+<h3>Evaluation of the judiciary</h3>
+<p>Public evaluation of the judiciary.</p>
+</div>
+<button aria-label="Expand chart 08" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30415288/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30415288/embed" title="Evaluation of the judiciary">
+</iframe>
+</div>
+</article>
+</div>
+</section>
+<section class="story-section reveal" id="delivery">
+<div class="story-copy">
+<div class="kicker">03 · From approval to delivery</div>
+<h2>The harder test is what people can actually feel in daily life.</h2>
+<p>The government says its first months produced a 2026 to 2029 program, new financial coordination mechanisms, reforms in electricity, and a strategy to diversify oil export routes. But political announcements matter only if they become visible in services, stability, and household experience.</p>
+<p>This is where the survey moves from leadership to delivery. Iraqis were asked to judge the government on security, electricity, higher education, water, basic education, and health, areas where success or failure is experienced directly rather than through political messaging.</p>
+<p>The resulting picture is not uniform. Some areas perform better than others, reinforcing the idea that the first 100 days are better understood as an uneven opening phase than as a single verdict on the government.</p>
+</div>
+<div class="story-charts">
+<article class="chart-card reveal" data-article-order="10" data-chart="10">
+<div class="chart-top">
+<div>
+<div class="chart-number">10 / 20</div>
+<h3>Government performance: providing security</h3>
+<p>Perceived success of the government in providing security.</p>
+</div>
+<button aria-label="Expand chart 10" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30415402/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30415402/embed" title="Government performance: providing security">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal" data-article-order="11" data-chart="11">
+<div class="chart-top">
+<div>
+<div class="chart-number">11 / 20</div>
+<h3>Government performance: providing electricity</h3>
+<p>Perceived success of the government in providing electricity.</p>
+</div>
+<button aria-label="Expand chart 11" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30401003/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30401003/embed" title="Government performance: providing electricity">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal story-wide" data-article-order="12" data-chart="12">
+<div class="chart-top">
+<div>
+<div class="chart-number">12 / 20</div>
+<h3>Government performance: higher education</h3>
+<p>Perceived success of the government in supporting higher education.</p>
+</div>
+<button aria-label="Expand chart 12" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30415614/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30415614/embed" title="Government performance: higher education">
+</iframe>
+</div>
+</article>
+<div class="story-break reveal">
+<div class="story-break-label">Closer to daily life</div>
+<h3>The second half of the service test is even more personal.</h3>
+<p>Security, electricity, and higher education reveal one side of state capacity. Water, basic education, and health bring the test directly into homes and communities. These are services people encounter repeatedly, which means slow improvement can quickly narrow the political space created by a strong opening.</p>
+</div>
+<article class="chart-card reveal" data-article-order="13" data-chart="14">
+<div class="chart-top">
+<div>
+<div class="chart-number">13 / 20</div>
+<h3>Government performance: providing water</h3>
+<p>Perceived success of the government in providing water.</p>
+</div>
+<button aria-label="Expand chart 14" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30415672/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30415672/embed" title="Government performance: providing water">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal" data-article-order="14" data-chart="15">
+<div class="chart-top">
+<div>
+<div class="chart-number">14 / 20</div>
+<h3>Government performance: basic education</h3>
+<p>Perceived success of the government in supporting basic education.</p>
+</div>
+<button aria-label="Expand chart 15" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30415682/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30415682/embed" title="Government performance: basic education">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal story-wide" data-article-order="15" data-chart="16">
+<div class="chart-top">
+<div>
+<div class="chart-number">15 / 20</div>
+<h3>Government performance: supporting health</h3>
+<p>Perceived success of the government in supporting health.</p>
+</div>
+<button aria-label="Expand chart 16" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30415692/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30415692/embed" title="Government performance: supporting health">
+</iframe>
+</div>
+</article>
+</div>
+</section>
+<section class="story-section reveal" id="economy">
+<div class="story-copy">
+<div class="kicker">04 · The economic test</div>
+<h2>For many Iraqis, government performance eventually becomes a household question.</h2>
+<p>Al-Zaidi inherited pressure around liquidity, public salaries, and an economy still heavily tied to oil. His government has pointed to financial reforms and efforts to diversify export routes, but the political value of those steps depends on whether citizens believe the broader economy is improving.</p>
+<p>The survey captures both sides of that judgment: how Iraqis assess the government’s performance on the economy so far, and what they expect over the next 12 months. Forty-six percent expect the economic situation to improve, a meaningful sign of optimism, but not an unconditional vote of confidence.</p>
+</div>
+<div class="story-charts">
+<article class="chart-card reveal" data-article-order="16" data-chart="17">
+<div class="chart-top">
+<div>
+<div class="chart-number">16 / 20</div>
+<h3>Government performance: improving the economic situation</h3>
+<p>Perceived success of the government in improving the economy.</p>
+</div>
+<button aria-label="Expand chart 17" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30415713/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30415713/embed" title="Government performance: improving the economic situation">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal" data-article-order="17" data-chart="19">
+<div class="chart-top">
+<div>
+<div class="chart-number">17 / 20</div>
+<h3>Economic outlook over the next 12 months</h3>
+<p>Whether Iraqis expect the economy to get better, stay the same, or worsen.</p>
+</div>
+<button aria-label="Expand chart 19" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30428157/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30428157/embed" title="Economic outlook over the next 12 months">
+</iframe>
+</div>
+</article>
+</div>
+</section>
+<section class="story-section reveal" id="corruption">
+<div class="story-copy">
+<div class="kicker">05 · The corruption gap</div>
+<h2>Headline recoveries are one thing. Changing public perception is another.</h2>
+<p>The government says anti-corruption efforts have recovered $160 million, 380 billion Iraqi dinars, and 402 kilograms of gold. Those are the kinds of figures that can signal activity at the top of the state, but the harder question is whether Iraqis believe corruption itself is becoming less entrenched.</p>
+<p>Here, the survey shows the scale of the challenge. Sixty percent say corruption exists in state institutions and agencies to a great extent. That makes anti-corruption performance a critical test of whether early government action can alter a much deeper public judgment.</p>
+</div>
+<div class="story-charts">
+<article class="chart-card reveal" data-article-order="18" data-chart="13">
+<div class="chart-top">
+<div>
+<div class="chart-number">18 / 20</div>
+<h3>Government performance: fighting corruption</h3>
+<p>Perceived success of the government in fighting corruption.</p>
+</div>
+<button aria-label="Expand chart 13" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30415662/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30415662/embed" title="Government performance: fighting corruption">
+</iframe>
+</div>
+</article>
+<article class="chart-card reveal" data-article-order="19" data-chart="20">
+<div class="chart-top">
+<div>
+<div class="chart-number">19 / 20</div>
+<h3>Extent of corruption in state institutions and agencies</h3>
+<p>How widespread Iraqis believe corruption is across state institutions and agencies.</p>
+</div>
+<button aria-label="Expand chart 20" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30428206/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30428206/embed" title="Extent of corruption in state institutions and agencies">
+</iframe>
+</div>
+</article>
+</div>
+</section>
+<section class="story-section reveal story-closing" id="road-ahead">
+<div class="story-copy">
+<div class="kicker">06 · The road ahead</div>
+<h2>The government has political runway. The question is what it does with it.</h2>
+<p>One hundred days cannot settle the success or failure of a government. What they can reveal is the shape of its starting position: relatively strong personal approval for the prime minister, more uneven confidence across institutions and services, cautious economic optimism, and a corruption problem that remains deeply embedded in public perception.</p>
+<p>Seventy-one percent think the al-Zaidi government will complete its constitutional four-year term. That is significant because it suggests that many Iraqis expect continuity. But continuity is not the same as confidence, and time in office is not the same as progress.</p>
+<div class="story-question">The first 100 days gave al-Zaidi a strong opening. The next test is whether that political honeymoon can be converted into visible, durable results.</div>
+</div>
+<div class="story-charts">
+<article class="chart-card reveal" data-article-order="20" data-chart="09">
+<div class="chart-top">
+<div>
+<div class="chart-number">20 / 20</div>
+<h3>Will the al-Zaidi government complete its four-year term?</h3>
+<p>Expectations about whether the government will complete its constitutional term.</p>
+</div>
+<button aria-label="Expand chart 09" class="open-chart expand-chart" data-src="https://public.flourish.studio/visualisation/30415311/embed" title="Expand chart" type="button">⛶</button>
+</div>
+<div class="embed-wrap">
+<iframe allowfullscreen="" frameborder="0" loading="lazy" scrolling="no" src="https://public.flourish.studio/visualisation/30415311/embed" title="Will the al-Zaidi government complete its four-year term?">
+</iframe>
+</div>
+</article>
+</div>
+
+<section class="watch-section reveal" aria-labelledby="watchTitle">
+<div class="watch-copy">
+<div class="watch-label">Watch the discussion</div>
+<h2 id="watchTitle">Prefer to watch the full conversation?</h2>
+<p>Watch the full discussion on Iraqis' views of the al-Zaidi government's first 100 days, including the survey findings, context, and what they may signal for the period ahead.</p>
+</div>
+<div class="video-frame">
+<iframe src="https://www.youtube.com/embed/V2MNscnqN3c?si=jWIFRjD6Oxy9dKhV" title="How Iraqis view the al-Zaidi government's first 100 days" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+</div>
 </section>
 
-<main>
-<div class="shell">
-
-  <section class="intro reveal">
-    <div class="kicker">Survey overview</div>
-    <h2>Strong early approval, but the harder test is whether confidence becomes lasting trust.</h2>
-    <p class="lead">The first 100 days show high satisfaction with Prime Minister Ali al-Zaidi and relatively strong confidence in his ability to carry the office. The same survey, however, shows persistent pressure from corruption, economic concerns, and uneven service delivery.</p>
-    <div class="stats">
-      <div class="stat"><strong>77%</strong><span>Satisfied with al-Zaidi’s selection</span><small>Somewhat + fully satisfied.</small></div>
-      <div class="stat"><strong>75%</strong><span>Say he has borne his responsibilities</span><small>Great + moderate extent.</small></div>
-      <div class="stat"><strong>60%</strong><span>Say corruption exists to a great extent</span><small>69% among Shia respondents.</small></div>
-      <div class="stat"><strong>46%</strong><span>Expect the economy to improve</span><small>Over the next 12 months.</small></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-head reveal">
-      <div>
-        <div class="kicker">Complete data</div>
-        <h2>All 20 charts from the published survey.</h2>
-        <p class="lead">Each visualization below uses the corresponding published Atlantic Council / IIACSS Flourish chart, preserving the full category and community breakdown rather than reducing it to a single headline figure.</p>
+<div class="article-conclusion reveal">
+<div class="conclusion-label">Conclusion</div>
+<h2>The first 100 days are a starting point, not a final verdict.</h2>
+<p>The survey shows a government entering its next phase with an important advantage: many Iraqis are still willing to give it time. Al-Zaidi's personal standing is stronger than confidence in several institutions, service delivery remains uneven, economic optimism is cautious, and corruption continues to shape how people judge the state.</p>
+<p>That gives the government a real opportunity, but also a clear standard. If early decisions become improvements people can see in electricity, water, schools, health, the economy, and accountability, the first 100 days may become the foundation for more durable trust. If those changes remain mostly at the level of announcements, early approval will become harder to sustain.</p>
+<div class="conclusion-final">The opening mandate is there. The next phase will be judged on delivery.</div>
+</div>
+</section>
+<div class="source reveal">
+<strong>Source:</strong> Independent Institute for Administration and Civil Society Studies (IIACSS), published by the Atlantic Council in October 2026. Government achievement figures referenced in the article are presented as government claims.
       </div>
-      <div class="count-pill">20 / 20 charts</div>
-    </div>
-    <div class="charts">
-      
-      <article class="chart-card reveal editorial-wide" data-chart="01">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">01 / 20</div>
-            <h3>Satisfaction with the selection of Ali al-Zaidi as prime minister</h3>
-            <p>How satisfied Iraqis are with the selection of Ali al-Zaidi, broken down by community.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30414211/embed" aria-label="Expand chart 01" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Satisfaction with the selection of Ali al-Zaidi as prime minister"
-            src="https://public.flourish.studio/visualisation/30414211/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal pair" data-chart="02">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">02 / 20</div>
-            <h3>Satisfaction with the selection of Nizar Amidi as president</h3>
-            <p>Public satisfaction with the selection of the president of the republic.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30414291/embed" aria-label="Expand chart 02" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Satisfaction with the selection of Nizar Amidi as president"
-            src="https://public.flourish.studio/visualisation/30414291/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal pair" data-chart="03">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">03 / 20</div>
-            <h3>Evaluation of the president of the republic</h3>
-            <p>Ratings on a 1–10 scale, where 1 is the lowest and 10 is the highest.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30414804/embed" aria-label="Expand chart 03" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Evaluation of the president of the republic"
-            src="https://public.flourish.studio/visualisation/30414804/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal center-wide" data-chart="04">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">04 / 20</div>
-            <h3>Evaluation of the prime minister</h3>
-            <p>Ratings of the prime minister on the same 1–10 scale.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30414889/embed" aria-label="Expand chart 04" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Evaluation of the prime minister"
-            src="https://public.flourish.studio/visualisation/30414889/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal pair" data-chart="05">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">05 / 20</div>
-            <h3>Evaluation of ministers in general</h3>
-            <p>How Iraqis rate ministers in general.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30414916/embed" aria-label="Expand chart 05" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Evaluation of ministers in general"
-            src="https://public.flourish.studio/visualisation/30414916/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal pair" data-chart="06">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">06 / 20</div>
-            <h3>Evaluation of the speaker of Parliament</h3>
-            <p>Public evaluation of the speaker of Parliament.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30415161/embed" aria-label="Expand chart 06" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Evaluation of the speaker of Parliament"
-            src="https://public.flourish.studio/visualisation/30415161/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal editorial-wide reverse" data-chart="07">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">07 / 20</div>
-            <h3>Evaluation of Parliament</h3>
-            <p>How Iraqis rate Parliament as an institution.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30415209/embed" aria-label="Expand chart 07" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Evaluation of Parliament"
-            src="https://public.flourish.studio/visualisation/30415209/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal center-wide" data-chart="08">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">08 / 20</div>
-            <h3>Evaluation of the judiciary</h3>
-            <p>Public evaluation of the judiciary.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30415288/embed" aria-label="Expand chart 08" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Evaluation of the judiciary"
-            src="https://public.flourish.studio/visualisation/30415288/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal editorial-wide" data-chart="09">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">09 / 20</div>
-            <h3>Will the al-Zaidi government complete its four-year term?</h3>
-            <p>Expectations about whether the government will complete its constitutional term.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30415311/embed" aria-label="Expand chart 09" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Will the al-Zaidi government complete its four-year term?"
-            src="https://public.flourish.studio/visualisation/30415311/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal pair" data-chart="10">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">10 / 20</div>
-            <h3>Government performance: providing security</h3>
-            <p>Perceived success of the government in providing security.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30415402/embed" aria-label="Expand chart 10" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Government performance: providing security"
-            src="https://public.flourish.studio/visualisation/30415402/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal pair" data-chart="11">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">11 / 20</div>
-            <h3>Government performance: providing electricity</h3>
-            <p>Perceived success of the government in providing electricity.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30401003/embed" aria-label="Expand chart 11" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Government performance: providing electricity"
-            src="https://public.flourish.studio/visualisation/30401003/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal center-wide" data-chart="12">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">12 / 20</div>
-            <h3>Government performance: higher education</h3>
-            <p>Perceived success of the government in supporting higher education.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30415614/embed" aria-label="Expand chart 12" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Government performance: higher education"
-            src="https://public.flourish.studio/visualisation/30415614/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal editorial-wide reverse" data-chart="13">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">13 / 20</div>
-            <h3>Government performance: fighting corruption</h3>
-            <p>Perceived success of the government in fighting corruption.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30415662/embed" aria-label="Expand chart 13" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Government performance: fighting corruption"
-            src="https://public.flourish.studio/visualisation/30415662/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal pair" data-chart="14">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">14 / 20</div>
-            <h3>Government performance: providing water</h3>
-            <p>Perceived success of the government in providing water.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30415672/embed" aria-label="Expand chart 14" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Government performance: providing water"
-            src="https://public.flourish.studio/visualisation/30415672/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal pair" data-chart="15">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">15 / 20</div>
-            <h3>Government performance: basic education</h3>
-            <p>Perceived success of the government in supporting basic education.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30415682/embed" aria-label="Expand chart 15" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Government performance: basic education"
-            src="https://public.flourish.studio/visualisation/30415682/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal pair" data-chart="16">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">16 / 20</div>
-            <h3>Government performance: supporting health</h3>
-            <p>Perceived success of the government in supporting health.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30415692/embed" aria-label="Expand chart 16" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Government performance: supporting health"
-            src="https://public.flourish.studio/visualisation/30415692/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal pair" data-chart="17">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">17 / 20</div>
-            <h3>Government performance: improving the economic situation</h3>
-            <p>Perceived success of the government in improving the economy.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30415713/embed" aria-label="Expand chart 17" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Government performance: improving the economic situation"
-            src="https://public.flourish.studio/visualisation/30415713/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal editorial-wide" data-chart="18">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">18 / 20</div>
-            <h3>Has the prime minister borne his responsibilities?</h3>
-            <p>Views of the prime minister's ability to bear his responsibilities since government formation.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30428129/embed" aria-label="Expand chart 18" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Has the prime minister borne his responsibilities?"
-            src="https://public.flourish.studio/visualisation/30428129/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal feature-wide" data-chart="19">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">19 / 20</div>
-            <h3>Economic outlook over the next 12 months</h3>
-            <p>Whether Iraqis expect the economy to get better, stay the same, or worsen.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30428157/embed" aria-label="Expand chart 19" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Economic outlook over the next 12 months"
-            src="https://public.flourish.studio/visualisation/30428157/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-
-      <article class="chart-card reveal editorial-wide reverse final-feature" data-chart="20">
-        <div class="chart-top">
-          <div>
-            <div class="chart-number">20 / 20</div>
-            <h3>Extent of corruption in state institutions and agencies</h3>
-            <p>How widespread Iraqis believe corruption is across state institutions and agencies.</p>
-          </div>
-          <button class="open-chart expand-chart" type="button" data-src="https://public.flourish.studio/visualisation/30428206/embed" aria-label="Expand chart 20" title="Expand chart">⛶</button>
-        </div>
-        <div class="embed-wrap">
-          <iframe
-            title="Extent of corruption in state institutions and agencies"
-            src="https://public.flourish.studio/visualisation/30428206/embed"
-            loading="lazy"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </article>
-    
-    </div>
-  </section>
-
-  <section class="insight-banner reveal">
-    <div class="insight-main">
-      <div class="kicker" style="color:#9cecf0">What the full set says</div>
-      <h2>The honeymoon is real, but it is not uniform.</h2>
-      <p>Leadership ratings are substantially stronger than ratings for several state institutions. Security performs better than many service sectors, while Kurdish respondents often register lower confidence than Sunni, Shia, or mixed respondents. The result is a government with a strong opening position but clear delivery risks.</p>
-    </div>
-    <div class="insight-side">
-      <strong>71%</strong>
-      <span>think the al-Zaidi government will complete its constitutional four-year term.</span>
-    </div>
-  </section>
-
-  <div class="source reveal">
-    <strong>Source:</strong> Independent Institute for Administration and Civil Society Studies (IIACSS), published by the Atlantic Council on October 5, 2026.
-  </div>
-
+</article>
 </div>
 </main>
-
-<div class="chart-modal" id="chartModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="chartModalTitle">
-  <div class="chart-modal-dialog">
-    <div class="chart-modal-head">
-      <div class="chart-modal-title" id="chartModalTitle">Chart</div>
-      <button class="chart-modal-close" id="chartModalClose" type="button" aria-label="Close expanded chart">×</button>
-    </div>
-    <div class="chart-modal-body">
-      <iframe id="chartModalFrame" title="Expanded survey chart" src="about:blank" allowfullscreen></iframe>
-    </div>
-  </div>
+<div aria-hidden="true" aria-labelledby="chartModalTitle" aria-modal="true" class="chart-modal" id="chartModal" role="dialog">
+<div class="chart-modal-dialog">
+<div class="chart-modal-head">
+<div class="chart-modal-title" id="chartModalTitle">Chart</div>
+<button aria-label="Close expanded chart" class="chart-modal-close" id="chartModalClose" type="button">×</button>
 </div>
-
+<div class="chart-modal-body">
+<iframe allowfullscreen="" id="chartModalFrame" src="about:blank" title="Expanded survey chart"></iframe>
+</div>
+</div>
+</div>
 <script>
 const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
@@ -970,7 +1159,6 @@ window.addEventListener("message",e=>{
   });
 });
 </script>
-
 <script>
    function getFullHeight() {
      const body = document.body;

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="An IIACSS article examining how Iraqis assess the al-Zaidi government's first 100 days, with all 20 published survey charts." name="description"/>
 <title>100 days in: How Iraqis view al-Zaidi's government | IIACSS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --bg:#f6f7fb;--paper:#fff;--ink:#11162a;--muted:#6c7286;
@@ -682,10 +685,73 @@ body.modal-open{overflow:hidden}
   .story-charts .embed-wrap iframe,
   .story-charts .chart-card.story-wide .embed-wrap iframe{height:440px}
 }
+
+/* ===== English / Arabic language switch ===== */
+.language-switch{
+  position:absolute;inset-block-start:22px;right:5%;z-index:8;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-width:116px;min-height:44px;padding:10px 17px;
+  border:1px solid rgba(255,255,255,.28);border-radius:999px;
+  background:rgba(8,17,39,.66);color:#fff;cursor:pointer;
+  font-family:"IBM Plex Sans Arabic","IBM Plex Sans",Tahoma,Arial,sans-serif;
+  font-size:.92rem;font-weight:600;line-height:1.3;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  box-shadow:0 8px 28px rgba(0,0,0,.12);
+  transition:background .2s ease,border-color .2s ease,transform .2s ease;
+}
+.language-switch:hover{background:rgba(118,88,255,.38);border-color:rgba(255,255,255,.7);transform:translateY(-2px)}
+.language-switch:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+.language-switch svg{width:19px;height:19px;flex:none}
+.chart-number{direction:ltr;unicode-bidi:isolate;text-align:start}
+html[dir="rtl"] .language-switch{right:auto;left:5%}
+html[dir="rtl"] body{font-family:"IBM Plex Sans Arabic",Tahoma,Arial,sans-serif}
+html[dir="rtl"] h1{font-size:clamp(2.4rem,4.8vw,5rem);line-height:1.3;letter-spacing:0}
+html[dir="rtl"] h2,
+html[dir="rtl"] h3{line-height:1.4;letter-spacing:0}
+html[dir="rtl"] .hero-copy,
+html[dir="rtl"] .story-intro p,
+html[dir="rtl"] .story-copy p,
+html[dir="rtl"] .article-conclusion p{line-height:1.95}
+html[dir="rtl"] .eyebrow,
+html[dir="rtl"] .kicker,
+html[dir="rtl"] .story-break-label,
+html[dir="rtl"] .watch-label,
+html[dir="rtl"] .conclusion-label,
+html[dir="rtl"] .chart-modal-title{letter-spacing:0;text-transform:none}
+html[dir="rtl"] .story-intro .story-lede:first-letter{
+  float:none;font-size:inherit;line-height:inherit;padding:0;
+  color:inherit;font-weight:inherit;letter-spacing:0;
+}
+html[dir="rtl"] .story-question{
+  border-left:0;border-right:4px solid var(--pink);border-radius:18px 0 0 18px;
+}
+html[dir="rtl"] .story-closing .story-question{border-right-color:var(--cyan)}
+html[dir="rtl"] .hero-media{left:auto;right:0;justify-content:flex-start}
+html[dir="rtl"] .hero-image{margin-left:0;margin-right:-7%;object-position:right bottom}
+html[dir="rtl"] .hero-glow{left:auto;right:-8%}
+html[dir="rtl"] .chart-number{text-align:right}
+html[dir="rtl"] .chart-modal-head{padding-inline:24px 18px}
+@media(max-width:1150px){
+  html[dir="rtl"] .hero-image{margin-right:-12%}
+}
+@media(max-width:680px){
+  .language-switch{inset-block-start:17px;min-width:106px;padding:9px 14px}
+  .hero-inner{padding-top:84px}
+  html[dir="rtl"] .hero-media{left:auto;right:auto}
+  html[dir="rtl"] .hero-image{margin-right:-8%}
+  html[dir="rtl"] .hero-glow{right:-5%}
+  html[dir="rtl"] .chart-modal-head{padding-inline:16px 10px}
+}
+
 </style>
 </head>
 <body>
 <section class="hero">
+<button type="button" class="language-switch" id="languageToggle" aria-label="Switch to Arabic" title="Switch to Arabic" lang="ar" dir="rtl">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9c-3-3-4-6-4-9s1-6 4-9Z"/></svg>
+<span id="languageToggleLabel">العربية</span>
+</button>
+
 <div class="hero-inner">
 <div class="hero-media">
 <div class="hero-glow"></div>
@@ -1104,6 +1170,200 @@ body.modal-open{overflow:hidden}
 </div>
 </div>
 </div>
+
+<script id="languageSupport">
+(function () {
+  "use strict";
+  const arabic = {
+  "100 days in: How Iraqis view al-Zaidi's government | IIACSS": "بعد 100 يوم: كيف يرى العراقيون حكومة الزيدي؟ | IIACSS",
+  "IIACSS · Iraq · 100 Days Survey · 2026": "IIACSS · العراق · استطلاع أول 100 يوم · 2026",
+  "How Iraqis view al-Zaidi’s government, 100 days in": "كيف يرى العراقيون حكومة الزيدي بعد 100 يوم؟",
+  "One hundred days is barely a moment in the life of a country. In politics, it is often the first real test of whether a new government can turn promises into progress.": "مئة يوم ليست سوى لحظة قصيرة في عمر بلد. لكنها في السياسة غالبًا ما تمثّل الاختبار الحقيقي الأول لقدرة حكومة جديدة على تحويل الوعود إلى تقدّم ملموس.",
+  "2,056 respondents": "2,056 مشاركًا في الاستطلاع",
+  "August 5 to 31, 2026": "من 5 إلى 31 آب 2026",
+  "±3.5 percentage points": "±3.5 نقطة مئوية",
+  "The first 100 days": "أول 100 يوم",
+  "What has actually changed, and what does it tell us about the road ahead?": "ما الذي تغيّر فعليًا، وماذا يخبرنا ذلك عن المرحلة المقبلة؟",
+  "One hundred days. In the life of a country, it is barely a moment. But in politics, it has become the first real test of whether a new government can turn promises into progress.": "مئة يوم. في عمر بلد، ليست سوى لحظة قصيرة. لكنها في السياسة أصبحت الاختبار الحقيقي الأول لقدرة حكومة جديدة على تحويل الوعود إلى تقدّم ملموس.",
+  "When Ali al-Zaidi was sworn in as Iraq’s prime minister on May 14, he arrived under unusual circumstances. A businessman with no previous government or political post, he was chosen as a consensus candidate after months of deadlock. He took office with an incomplete cabinet: parliament approved 14 ministers while nine ministries, including Interior and Defence, were still pending.": "عندما أدّى علي الزيدي اليمين رئيسًا لوزراء العراق في 14 أيار، وصل إلى المنصب في ظروف غير اعتيادية. فقد اختير رجل الأعمال، الذي لم يسبق له تولّي منصب حكومي أو سياسي، مرشحًا توافقيًا بعد أشهر من الانسداد السياسي. وتسلّم مهامه بتشكيلة وزارية غير مكتملة: إذ أقرّ البرلمان 14 وزيرًا، بينما ظلّت تسع وزارات، من بينها الداخلية والدفاع، بانتظار الحسم.",
+  "From his first day, the government faced overlapping pressures: oil exports, liquidity and public salaries, bringing weapons under state control, corruption, a deepening water and drought crisis, and a tense regional environment.": "منذ اليوم الأول، واجهت الحكومة ضغوطًا متداخلة: صادرات النفط، والسيولة ورواتب الموظفين، وحصر السلاح بيد الدولة، والفساد، وتفاقم أزمة المياه والجفاف، وبيئة إقليمية متوترة.",
+  "The government says it has already opened files that had been delayed for years. It points to recovered public funds and gold, a new four-year government program, and reforms in finance and electricity. Critics argue that many of these decisions have not yet translated into tangible changes in daily life.": "تقول الحكومة إنها فتحت بالفعل ملفات ظلّت مؤجّلة لسنوات. وتشير إلى استرداد أموال عامة وذهب، وإقرار برنامج حكومي جديد لأربع سنوات، وإصلاحات في قطاعَي المالية والكهرباء. ويرى منتقدوها أن كثيرًا من هذه القرارات لم يتحوّل بعد إلى تغييرات ملموسة في الحياة اليومية.",
+  "So the central question is not simply whether the government has acted. It is whether Iraqis believe those actions are producing results.": "لذلك، لا يقتصر السؤال الأساسي على ما إذا كانت الحكومة قد تحرّكت، بل يتعلّق بما إذا كان العراقيون يعتقدون أن هذه الخطوات تحقق نتائج.",
+  "01 · The opening mandate": "01 · التفويض الشعبي الأولي",
+  "A strong start begins with al-Zaidi himself.": "البداية القوية تنطلق من الزيدي نفسه.",
+  "The clearest finding in the survey is the prime minister’s relatively strong personal opening position. Seventy-seven percent say they are somewhat or fully satisfied with his selection, while 75 percent say he has borne the responsibilities of office to a great or moderate extent.": "أبرز نتائج الاستطلاع هي المكانة الشخصية القوية نسبيًا التي يتمتّع بها رئيس الوزراء في بداية ولايته. إذ يقول 77 في المئة إنهم راضون إلى حدّ ما أو راضون تمامًا عن اختياره، بينما يرى 75 في المئة أنه تحمّل مسؤوليات منصبه بدرجة كبيرة أو متوسطة.",
+  "Those numbers do not tell us whether the government has solved Iraq’s structural problems. They tell us something more immediate: after a difficult formation process, al-Zaidi begins with substantial public room to act. The charts below show that mandate from three angles, his selection, his overall evaluation, and whether Iraqis believe he has carried the weight of the office.": "لا تخبرنا هذه الأرقام ما إذا كانت الحكومة قد حلّت مشكلات العراق البنيوية. لكنها تكشف أمرًا أكثر مباشرة: بعد عملية تشكيل صعبة، يبدأ الزيدي ولايته بهامش شعبي واسع يتيح له التحرّك. وتعرض الرسوم أدناه هذا التفويض من ثلاث زوايا: اختياره، وتقييمه العام، وما إذا كان العراقيون يرون أنه تحمّل أعباء المنصب.",
+  "Satisfaction with the selection of Ali al-Zaidi as prime minister": "الرضا عن اختيار علي الزيدي رئيسًا للوزراء",
+  "How satisfied Iraqis are with the selection of Ali al-Zaidi, broken down by community.": "مدى رضا العراقيين عن اختيار علي الزيدي، موزّعًا بحسب المكوّنات المجتمعية.",
+  "Evaluation of the prime minister": "تقييم رئيس الوزراء",
+  "Ratings of the prime minister on the same 1 to 10 scale.": "تقييم رئيس الوزراء على المقياس نفسه، من 1 إلى 10.",
+  "Has the prime minister borne his responsibilities?": "هل تحمّل رئيس الوزراء مسؤولياته؟",
+  "Views of the prime minister's ability to bear his responsibilities since government formation.": "آراء العراقيين في قدرة رئيس الوزراء على تحمّل مسؤولياته منذ تشكيل الحكومة.",
+  "02 · Beyond the prime minister": "02 · ما وراء رئيس الوزراء",
+  "Personal approval is not the same thing as confidence in the political system.": "الرضا عن شخص لا يعني بالضرورة الثقة بالنظام السياسي.",
+  "A new prime minister does not govern alone. The presidency, cabinet, parliament, its speaker, and the judiciary all shape whether political decisions can be turned into durable policy.": "لا يحكم رئيس الوزراء الجديد بمفرده. فرئاسة الجمهورية، ومجلس الوزراء، والبرلمان ورئيسه، والسلطة القضائية، تؤثر جميعها في قدرة القرارات السياسية على التحوّل إلى سياسات مستدامة.",
+  "That makes the institutional ratings especially important. Read together, they show whether the early confidence surrounding al-Zaidi extends to the wider state, or whether the public is separating its view of the prime minister from its view of the institutions around him.": "وهذا ما يمنح تقييمات المؤسسات أهمية خاصة. فعند قراءتها معًا، يتبيّن ما إذا كانت الثقة المبكرة المحيطة بالزيدي تمتدّ إلى الدولة بمؤسساتها الأوسع، أم أن الجمهور يميّز بين نظرته إلى رئيس الوزراء ونظرته إلى المؤسسات المحيطة به.",
+  "Satisfaction with the selection of Nizar Amidi as president": "الرضا عن اختيار نزار آميدي رئيسًا للجمهورية",
+  "Public satisfaction with the selection of the president of the republic.": "مدى رضا الجمهور عن اختيار رئيس الجمهورية.",
+  "Evaluation of the president of the republic": "تقييم رئيس الجمهورية",
+  "Ratings on a 1 to 10 scale, where 1 is the lowest and 10 is the highest.": "تقييمات على مقياس من 1 إلى 10، حيث يمثّل 1 أدنى تقييم و10 أعلاه.",
+  "Evaluation of ministers in general": "تقييم الوزراء عمومًا",
+  "How Iraqis rate ministers in general.": "كيف يقيّم العراقيون الوزراء بوجه عام.",
+  "The institutional picture": "الصورة المؤسسية",
+  "From individual officeholders to the institutions that carry the system.": "من شاغلي المناصب إلى المؤسسات التي يقوم عليها النظام.",
+  "The first three ratings focus on the president and the cabinet. The next step is broader. Parliament, its speaker, and the judiciary shape legislation, oversight, and the implementation of public decisions. Their evaluations help show where confidence in political leadership begins to diverge from confidence in the institutions around it.": "تركّز التقييمات الثلاثة الأولى على رئيس الجمهورية ومجلس الوزراء. أما الخطوة التالية فأوسع نطاقًا؛ إذ يؤثر البرلمان ورئيسه والسلطة القضائية في التشريع والرقابة وتنفيذ القرارات العامة. وتساعد تقييماتهم على تحديد المواضع التي تبدأ فيها الثقة بالقيادة السياسية بالافتراق عن الثقة بالمؤسسات المحيطة بها.",
+  "Evaluation of the speaker of Parliament": "تقييم رئيس مجلس النواب",
+  "Public evaluation of the speaker of Parliament.": "تقييم الجمهور لرئيس مجلس النواب.",
+  "Evaluation of Parliament": "تقييم مجلس النواب",
+  "How Iraqis rate Parliament as an institution.": "كيف يقيّم العراقيون مجلس النواب بوصفه مؤسسة.",
+  "Evaluation of the judiciary": "تقييم السلطة القضائية",
+  "Public evaluation of the judiciary.": "تقييم الجمهور للسلطة القضائية.",
+  "03 · From approval to delivery": "03 · من الرضا إلى الإنجاز",
+  "The harder test is what people can actually feel in daily life.": "الاختبار الأصعب هو ما يشعر به الناس فعليًا في حياتهم اليومية.",
+  "The government says its first months produced a 2026 to 2029 program, new financial coordination mechanisms, reforms in electricity, and a strategy to diversify oil export routes. But political announcements matter only if they become visible in services, stability, and household experience.": "تقول الحكومة إن أشهرها الأولى شهدت وضع برنامج للفترة من 2026 إلى 2029، وآليات جديدة للتنسيق المالي، وإصلاحات في الكهرباء، واستراتيجية لتنويع مسارات تصدير النفط. لكن الإعلانات السياسية لا تكتسب أهميتها إلا عندما تنعكس على الخدمات والاستقرار وتجربة الأسر اليومية.",
+  "This is where the survey moves from leadership to delivery. Iraqis were asked to judge the government on security, electricity, higher education, water, basic education, and health, areas where success or failure is experienced directly rather than through political messaging.": "هنا ينتقل الاستطلاع من تقييم القيادة إلى تقييم الإنجاز. فقد طُلب من العراقيين الحكم على أداء الحكومة في الأمن والكهرباء والتعليم العالي والمياه والتعليم الأساسي والصحة، وهي مجالات يلمس الناس نجاحها أو إخفاقها مباشرة، بعيدًا عن الخطاب السياسي.",
+  "The resulting picture is not uniform. Some areas perform better than others, reinforcing the idea that the first 100 days are better understood as an uneven opening phase than as a single verdict on the government.": "الصورة الناتجة ليست متجانسة. فبعض المجالات تحقق أداءً أفضل من غيرها، مما يعزّز فكرة أن أول 100 يوم تُفهم بصورة أدق بوصفها مرحلة افتتاحية متفاوتة الأداء، لا حكمًا واحدًا شاملًا على الحكومة.",
+  "Government performance: providing security": "أداء الحكومة: توفير الأمن",
+  "Perceived success of the government in providing security.": "مدى نجاح الحكومة في توفير الأمن من وجهة نظر الجمهور.",
+  "Government performance: providing electricity": "أداء الحكومة: توفير الكهرباء",
+  "Perceived success of the government in providing electricity.": "مدى نجاح الحكومة في توفير الكهرباء من وجهة نظر الجمهور.",
+  "Government performance: higher education": "أداء الحكومة: التعليم العالي",
+  "Perceived success of the government in supporting higher education.": "مدى نجاح الحكومة في دعم التعليم العالي من وجهة نظر الجمهور.",
+  "Closer to daily life": "أقرب إلى الحياة اليومية",
+  "The second half of the service test is even more personal.": "النصف الثاني من اختبار الخدمات يمسّ الناس بصورة أكثر مباشرة.",
+  "Security, electricity, and higher education reveal one side of state capacity. Water, basic education, and health bring the test directly into homes and communities. These are services people encounter repeatedly, which means slow improvement can quickly narrow the political space created by a strong opening.": "يكشف الأمن والكهرباء والتعليم العالي جانبًا من قدرة الدولة. أما المياه والتعليم الأساسي والصحة، فتنقل الاختبار مباشرة إلى المنازل والمجتمعات المحلية. وهذه خدمات يتعامل معها الناس باستمرار، مما يعني أن بطء التحسّن قد يضيّق سريعًا هامش التحرّك السياسي الذي أتاحته البداية القوية.",
+  "Government performance: providing water": "أداء الحكومة: توفير المياه",
+  "Perceived success of the government in providing water.": "مدى نجاح الحكومة في توفير المياه من وجهة نظر الجمهور.",
+  "Government performance: basic education": "أداء الحكومة: التعليم الأساسي",
+  "Perceived success of the government in supporting basic education.": "مدى نجاح الحكومة في دعم التعليم الأساسي من وجهة نظر الجمهور.",
+  "Government performance: supporting health": "أداء الحكومة: دعم الصحة",
+  "Perceived success of the government in supporting health.": "مدى نجاح الحكومة في دعم الصحة من وجهة نظر الجمهور.",
+  "04 · The economic test": "04 · الاختبار الاقتصادي",
+  "For many Iraqis, government performance eventually becomes a household question.": "بالنسبة إلى كثير من العراقيين، يصبح أداء الحكومة في النهاية قضية تمسّ الأسرة.",
+  "Al-Zaidi inherited pressure around liquidity, public salaries, and an economy still heavily tied to oil. His government has pointed to financial reforms and efforts to diversify export routes, but the political value of those steps depends on whether citizens believe the broader economy is improving.": "ورث الزيدي ضغوطًا تتعلق بالسيولة ورواتب الموظفين، واقتصادًا لا يزال شديد الارتباط بالنفط. وتشير حكومته إلى إصلاحات مالية وجهود لتنويع مسارات التصدير، لكن القيمة السياسية لهذه الخطوات تعتمد على ما إذا كان المواطنون يعتقدون أن الاقتصاد عمومًا يتحسّن.",
+  "The survey captures both sides of that judgment: how Iraqis assess the government’s performance on the economy so far, and what they expect over the next 12 months. Forty-six percent expect the economic situation to improve, a meaningful sign of optimism, but not an unconditional vote of confidence.": "يرصد الاستطلاع جانبَي هذا الحكم: كيف يقيّم العراقيون أداء الحكومة الاقتصادي حتى الآن، وماذا يتوقّعون خلال الأشهر الاثني عشر المقبلة. ويتوقّع 46 في المئة تحسّن الوضع الاقتصادي، وهي علامة واضحة على التفاؤل، لكنها لا تمثّل ثقة غير مشروطة.",
+  "Government performance: improving the economic situation": "أداء الحكومة: تحسين الوضع الاقتصادي",
+  "Perceived success of the government in improving the economy.": "مدى نجاح الحكومة في تحسين الاقتصاد من وجهة نظر الجمهور.",
+  "Economic outlook over the next 12 months": "التوقعات الاقتصادية خلال الأشهر الاثني عشر المقبلة",
+  "Whether Iraqis expect the economy to get better, stay the same, or worsen.": "ما إذا كان العراقيون يتوقّعون تحسّن الاقتصاد، أو بقاءه على حاله، أو تدهوره.",
+  "05 · The corruption gap": "05 · الفجوة في مكافحة الفساد",
+  "Headline recoveries are one thing. Changing public perception is another.": "استرداد الأموال في العناوين شيء، وتغيير نظرة الجمهور شيء آخر.",
+  "The government says anti-corruption efforts have recovered $160 million, 380 billion Iraqi dinars, and 402 kilograms of gold. Those are the kinds of figures that can signal activity at the top of the state, but the harder question is whether Iraqis believe corruption itself is becoming less entrenched.": "تقول الحكومة إن جهود مكافحة الفساد أدّت إلى استرداد 160 مليون دولار، و380 مليار دينار عراقي، و402 كيلوغرام من الذهب. وقد تشير هذه الأرقام إلى نشاط على أعلى مستويات الدولة، لكن السؤال الأصعب هو ما إذا كان العراقيون يعتقدون أن الفساد نفسه أصبح أقلّ تجذّرًا.",
+  "Here, the survey shows the scale of the challenge. Sixty percent say corruption exists in state institutions and agencies to a great extent. That makes anti-corruption performance a critical test of whether early government action can alter a much deeper public judgment.": "هنا يكشف الاستطلاع حجم التحدي. إذ يقول 60 في المئة إن الفساد موجود بدرجة كبيرة في مؤسسات الدولة وأجهزتها. وهذا يجعل أداء الحكومة في مكافحة الفساد اختبارًا حاسمًا لقدرة إجراءاتها المبكرة على تغيير حكم شعبي أعمق بكثير.",
+  "Government performance: fighting corruption": "أداء الحكومة: مكافحة الفساد",
+  "Perceived success of the government in fighting corruption.": "مدى نجاح الحكومة في مكافحة الفساد من وجهة نظر الجمهور.",
+  "Extent of corruption in state institutions and agencies": "مدى انتشار الفساد في مؤسسات الدولة وأجهزتها",
+  "How widespread Iraqis believe corruption is across state institutions and agencies.": "مدى انتشار الفساد في مؤسسات الدولة وأجهزتها من وجهة نظر العراقيين.",
+  "06 · The road ahead": "06 · المرحلة المقبلة",
+  "The government has political runway. The question is what it does with it.": "لدى الحكومة هامش سياسي للتحرّك. والسؤال هو كيف ستستثمره.",
+  "One hundred days cannot settle the success or failure of a government. What they can reveal is the shape of its starting position: relatively strong personal approval for the prime minister, more uneven confidence across institutions and services, cautious economic optimism, and a corruption problem that remains deeply embedded in public perception.": "لا تستطيع مئة يوم حسم نجاح حكومة أو إخفاقها. لكنها تستطيع إظهار ملامح نقطة انطلاقها: رضا شخصي قوي نسبيًا عن رئيس الوزراء، وثقة أكثر تفاوتًا بالمؤسسات والخدمات، وتفاؤل اقتصادي حذر، ومشكلة فساد ما تزال راسخة بعمق في نظرة الجمهور.",
+  "Seventy-one percent think the al-Zaidi government will complete its constitutional four-year term. That is significant because it suggests that many Iraqis expect continuity. But continuity is not the same as confidence, and time in office is not the same as progress.": "يعتقد 71 في المئة أن حكومة الزيدي ستكمل مدّتها الدستورية البالغة أربع سنوات. وهذا مهم لأنه يشير إلى أن كثيرًا من العراقيين يتوقّعون الاستمرارية. لكن الاستمرارية لا تعني بالضرورة الثقة، والبقاء في المنصب لا يعني بالضرورة تحقيق التقدّم.",
+  "The first 100 days gave al-Zaidi a strong opening. The next test is whether that political honeymoon can be converted into visible, durable results.": "منحت أول 100 يوم الزيدي بداية قوية. والاختبار المقبل هو ما إذا كان بالإمكان تحويل فترة السماح السياسية هذه إلى نتائج ملموسة ومستدامة.",
+  "Will the al-Zaidi government complete its four-year term?": "هل ستكمل حكومة الزيدي ولايتها البالغة أربع سنوات؟",
+  "Expectations about whether the government will complete its constitutional term.": "التوقعات بشأن إكمال الحكومة مدّتها الدستورية.",
+  "Watch the discussion": "شاهد النقاش",
+  "Prefer to watch the full conversation?": "تفضّل مشاهدة اللقاء كاملًا؟",
+  "Watch the full discussion on Iraqis' views of the al-Zaidi government's first 100 days, including the survey findings, context, and what they may signal for the period ahead.": "شاهد النقاش الكامل حول آراء العراقيين في أول 100 يوم من حكومة الزيدي، بما يشمل نتائج الاستطلاع وسياقها وما قد تشير إليه بشأن المرحلة المقبلة.",
+  "Conclusion": "الخلاصة",
+  "The first 100 days are a starting point, not a final verdict.": "أول 100 يوم نقطة انطلاق، وليست حكمًا نهائيًا.",
+  "The survey shows a government entering its next phase with an important advantage: many Iraqis are still willing to give it time. Al-Zaidi's personal standing is stronger than confidence in several institutions, service delivery remains uneven, economic optimism is cautious, and corruption continues to shape how people judge the state.": "يُظهر الاستطلاع حكومة تدخل مرحلتها المقبلة بميزة مهمة: ما يزال كثير من العراقيين مستعدّين لمنحها الوقت. فالمكانة الشخصية للزيدي أقوى من الثقة بعدد من المؤسسات، وأداء الخدمات ما يزال متفاوتًا، والتفاؤل الاقتصادي حذرًا، والفساد يواصل التأثير في كيفية حكم الناس على الدولة.",
+  "That gives the government a real opportunity, but also a clear standard. If early decisions become improvements people can see in electricity, water, schools, health, the economy, and accountability, the first 100 days may become the foundation for more durable trust. If those changes remain mostly at the level of announcements, early approval will become harder to sustain.": "وهذا يمنح الحكومة فرصة حقيقية، لكنه يضع أمامها معيارًا واضحًا أيضًا. فإذا تحوّلت القرارات المبكرة إلى تحسينات يلمسها الناس في الكهرباء والمياه والمدارس والصحة والاقتصاد والمساءلة، فقد تصبح أول 100 يوم أساسًا لثقة أكثر استدامة. أما إذا بقيت هذه التغييرات في معظمها على مستوى الإعلانات، فسيصبح الحفاظ على الرضا الأولي أكثر صعوبة.",
+  "The opening mandate is there. The next phase will be judged on delivery.": "التفويض الأولي موجود. والمرحلة المقبلة سيُحكم عليها بالإنجاز.",
+  "Source:": "المصدر:",
+  "Independent Institute for Administration and Civil Society Studies (IIACSS), published by the Atlantic Council in October 2026. Government achievement figures referenced in the article are presented as government claims.": "المعهد المستقل للدراسات الإدارية والمجتمع المدني (IIACSS)، نشره المجلس الأطلسي في تشرين الأول 2026. أرقام الإنجازات الحكومية الواردة في المقال معروضة بوصفها تصريحات للحكومة.",
+  "Chart": "الرسم البياني",
+  "An IIACSS article examining how Iraqis assess the al-Zaidi government's first 100 days, with all 20 published survey charts.": "مقال من IIACSS يتناول تقييم العراقيين لأول 100 يوم من حكومة الزيدي، مع جميع الرسوم البيانية العشرين المنشورة للاستطلاع.",
+  "Ali al-Zaidi in front of the Iraqi flag": "علي الزيدي أمام العلم العراقي",
+  "Expand chart": "تكبير الرسم البياني",
+  "Close expanded chart": "إغلاق الرسم البياني المكبّر",
+  "Expanded survey chart": "رسم بياني مكبّر للاستطلاع",
+  "How Iraqis view the al-Zaidi government's first 100 days": "كيف يرى العراقيون أول 100 يوم من حكومة الزيدي",
+  "Survey chart": "رسم بياني للاستطلاع"
+};
+  const normalize = text => text.replace(/\s+/g, " ").trim();
+  const textNodes = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      if (node.parentElement?.closest("script, style, #languageToggle, #chartModalTitle")) return NodeFilter.FILTER_REJECT;
+      return Object.prototype.hasOwnProperty.call(arabic, normalize(node.nodeValue)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    }
+  });
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    textNodes.push({ node, en: node.nodeValue, ar: arabic[normalize(node.nodeValue)] });
+  }
+  const attributes = [];
+  document.querySelectorAll("[title], [aria-label], [alt], meta[name='description']").forEach(element => {
+    if (element.closest("#languageToggle")) return;
+    ["title", "aria-label", "alt", "content"].forEach(name => {
+      const en = element.getAttribute(name);
+      if (!en) return;
+      const chartLabel = en.match(/^Expand chart (\d+)$/);
+      const ar = chartLabel ? "تكبير الرسم البياني " + chartLabel[1] : arabic[normalize(en)];
+      if (ar) attributes.push({element, name, en, ar});
+    });
+  });
+  const titleEn = document.title;
+  const toggle = document.getElementById("languageToggle");
+  const label = document.getElementById("languageToggleLabel");
+  const preferenceKey = "iiacss-100days-language";
+  let currentLanguage = "en";
+
+  function setLanguage(language, remember) {
+    currentLanguage = language === "ar" ? "ar" : "en";
+    const isArabic = currentLanguage === "ar";
+    document.documentElement.lang = currentLanguage;
+    document.documentElement.dir = isArabic ? "rtl" : "ltr";
+    textNodes.forEach(item => { item.node.nodeValue = isArabic ? item.en.match(/^\s*/)[0] + item.ar + item.en.match(/\s*$/)[0] : item.en; });
+    attributes.forEach(item => { item.element.setAttribute(item.name, isArabic ? item.ar : item.en); });
+    document.title = isArabic ? arabic[titleEn] : titleEn;
+    label.textContent = isArabic ? "English" : "العربية";
+    toggle.lang = isArabic ? "en" : "ar";
+    toggle.dir = isArabic ? "ltr" : "rtl";
+    const toggleDescription = isArabic ? "التبديل إلى الإنجليزية" : "Switch to Arabic";
+    toggle.setAttribute("aria-label", toggleDescription);
+    toggle.title = toggleDescription;
+
+    const modal = document.getElementById("chartModal");
+    const modalTitle = document.getElementById("chartModalTitle");
+    const modalFrame = document.getElementById("chartModalFrame");
+    if (modal.classList.contains("is-open")) {
+      const activeChart = Array.from(document.querySelectorAll(".chart-card")).find(card =>
+        card.querySelector(".expand-chart")?.dataset.src === modalFrame.getAttribute("src")
+      );
+      const title = activeChart?.querySelector("h3")?.textContent || (isArabic ? "رسم بياني للاستطلاع" : "Survey chart");
+      modalTitle.textContent = title;
+      modalFrame.title = title;
+    } else {
+      modalTitle.textContent = isArabic ? "الرسم البياني" : "Chart";
+    }
+    if (remember) {
+      try { localStorage.setItem(preferenceKey, currentLanguage); } catch (_) {}
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", currentLanguage);
+        history.replaceState(history.state, "", url);
+      } catch (_) {}
+    }
+    requestAnimationFrame(() => {
+      if (typeof sendHeight === "function") sendHeight();
+      if (typeof sendReadingTime === "function") sendReadingTime();
+    });
+  }
+  let initialLanguage = "en";
+  try {
+    const requested = new URLSearchParams(window.location.search).get("lang");
+    const saved = localStorage.getItem(preferenceKey);
+    initialLanguage = ["ar", "en"].includes(requested) ? requested : saved === "ar" ? "ar" : "en";
+  } catch (_) {
+    const requested = new URLSearchParams(window.location.search).get("lang");
+    initialLanguage = requested === "ar" ? "ar" : "en";
+  }
+  toggle.addEventListener("click", () => setLanguage(currentLanguage === "en" ? "ar" : "en", true));
+  setLanguage(initialLanguage, false);
+})();
+</script>
+
 <script>
 const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
@@ -1120,11 +1380,12 @@ let lastFocused=null;
 
 function openChartModal(btn){
   const card=btn.closest(".chart-card");
-  const title=card?.querySelector("h3")?.textContent?.trim() || "Survey chart";
+  const title=card?.querySelector("h3")?.textContent?.trim() || (document.documentElement.lang === "ar" ? "رسم بياني للاستطلاع" : "Survey chart");
   const src=btn.dataset.src;
   if(!src) return;
   lastFocused=btn;
   modalTitle.textContent=title;
+  modalFrame.title=title;
   modalFrame.src=src;
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden","false");
